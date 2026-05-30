@@ -1,0 +1,99 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { getLangFromUrl, localizedPath, useTranslations } from "@/utils/i18n";
+import Headline from "@/components/ui/Headline.astro";
+import PostItem from "@/components/blog/PostItem.astro";
+
+export async function getStaticPaths() {
+  const allPosts = await getCollection("blog");
+
+  const publishedPosts = allPosts.filter(
+    (post) => post.data && post.data.pubDate
+  );
+
+  const paths = [];
+
+  for (const lang of ["de", "en"]) {
+    const langPosts = publishedPosts.filter((post) =>
+      post.id.startsWith(`${lang}/`)
+    );
+
+    const tags = new Set();
+
+    langPosts.forEach((post) => {
+      post.data.tags?.forEach((tag) => tags.add(tag));
+    });
+
+    tags.forEach((tag) => {
+      paths.push({
+        params: {
+          lang,
+          tag: tag as string,
+        },
+        props: {
+          lang,
+          tag,
+          posts: langPosts.filter((post) =>
+            post.data.tags?.includes(tag as string)
+          ),
+        },
+      });
+    });
+  }
+
+  return paths;
+}
+
+const lang = Astro.props.lang ?? getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const { tag, posts } = Astro.props;
+
+const metadata = {
+  title:
+    lang === "de"
+      ? `Beiträge mit dem Tag '${tag}'`
+      : `Posts tagged with '${tag}'`,
+  description:
+    lang === "en"
+      ? `Entdecken Sie unsere Artikel über ${tag}.`
+      : `Explore our articles about ${tag}.`,
+};
+---
+
+<BaseLayout metadata={metadata}>
+  <section class="relative px-4 py-24 sm:px-6 lg:px-8 md:py-32">
+    <div class="relative mx-auto max-w-5xl">
+      <Headline
+        tagline={lang === "de" ? "Tag" : "Tag"}
+        title={`#${tag}`}
+        subtitle={
+          lang === "de"
+            ? `${posts.length} Artikel gefunden.`
+            : `Showing ${posts.length} article${posts.length === 1 ? "" : "s"}.`
+        }
+        classes={{
+          container: "mb-12 text-center",
+          title:
+            "font-heading mb-4 text-4xl font-bold tracking-tight text-foreground md:text-6xl capitalized",
+          subtitle: "mx-auto max-w-3xl text-xl text-muted-foreground",
+        }}
+      />
+
+      <div class="mb-8 text-center">
+        <a href={localizedPath(lang, "/blog")} class="text-primary hover:underline">
+          {lang === "de" ? "← Zurück zum Blog" : "← Back to blog"}
+        </a>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          posts
+            .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+            .map((post) => <PostItem post={post} lang={lang} />)
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

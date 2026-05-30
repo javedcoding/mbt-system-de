@@ -1,0 +1,42 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Hero from "@/components/widgets/Hero.astro";
+import notFoundImg from "@/assets/images/404_image.png";
+import { useTranslations } from "@/utils/i18n";
+
+const lang = Astro.url.pathname.split("/")[1] || "en";
+const t = useTranslations(lang);
+
+const metadata = {
+  title: "404 - Page Not Found",
+  description: "The page you're looking for doesn't exist.",
+  ignoreTitleTemplate: true,
+};
+---
+
+<BaseLayout {metadata}>
+  
+  <Hero
+    description={t("not_found_description")}
+    actions={[
+      {
+        variant: "primary",
+        text: "Back to Home",
+        href: "/",
+        icon: "lucide:home",
+      },
+      {
+        variant: "secondary",
+        text: "Contact",
+        href: "/contact",
+        icon: "lucide:phone",
+      },
+    ]}
+  >
+  <img
+      src={notFoundImg.src}
+      alt="404"
+      class="w-full max-w-[700px] mx-auto mb-6"
+    />
+</Hero>
+</BaseLayout>

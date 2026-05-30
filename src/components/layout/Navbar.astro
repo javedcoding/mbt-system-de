@@ -1,0 +1,282 @@
+---
+import { siteConfig } from "@/config/site";
+import ThemeToggle from "@/components/ui/ThemeToggle.astro";
+import LanguageToggle from "@/components/ui/LanguageToggle.astro";
+import { useTranslations, localizedPath } from "@/utils/i18n";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<nav
+  class="fixed top-0 z-50 w-full border-b border-border bg-background md:bg-background/50 md:backdrop-blur"
+>
+  <div
+    class="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8"
+  >
+    <div class="flex items-center gap-2">
+      <div class="flex items-center gap-3">
+          <!-- Company Logo -->
+          <img
+            src="/black_logo.svg"
+            alt="MBT Logo"
+            class="h-8 w-auto dark:hidden"
+          />
+          <img
+            src="/white_logo.svg"
+            alt="MBT Logo"
+            class="h-8 w-auto hidden dark:block"
+          />
+      </div>
+      <!-- <a
+        href="/"
+        class="text-xl font-bold tracking-tight text-foreground transition-colors hover:text-primary"
+      >
+        {siteConfig.alias}
+      </a> -->
+    </div>
+
+    <!-- Desktop Menu -->
+    <div class="hidden md:block">
+      <div class="ml-10 flex items-baseline space-x-8">
+        <!-- Home or normal links (keep your existing ones if any) -->
+        {
+          siteConfig.navLinks.map((link) => {
+            const href = localizedPath(lang, link.href);
+
+            if (!link.children){
+              return (
+                <a href={href}
+                class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                >
+                  {t(link.key)}
+                </a>
+              );
+            }
+            return (
+              <!-- Changed a bit here -->
+              <div class="relative flex h-full items-center"> 
+                <!-- Main link (click navigates) -->
+                <div class="flex items-center gap-1">
+                  <a
+                    href={href}
+                    class="text-sm font-medium text-foreground transition-colors hover:text-primary"
+                  >
+                    {t(link.key)}
+                  </a>
+                  <!-- Arrow button -->
+                  <button
+                    class="dropdown-toggle text-sm transition-colors"
+                    aria-expanded="false"
+                    >
+                    <span class="arrow text-[10px] leading-none">▼</span>
+                  </button>
+                </div>
+              
+                <!-- Dropdown menu-->
+                <div class="dropdown-menu hidden absolute left-0 top-full mt-6 bg-card border border-border rounded-lg shadow-lg min-w-[180px] z-50 transition-all duration-200">
+                  {
+                    link.children.map((child) => {
+                      const childHref = localizedPath(lang, child.href);
+                      return (
+                        <a
+                          href={childHref}
+                          class="block px-4 py-2 text-sm text-foreground hover:bg-foreground/10"
+                        >
+                          {t(child.key)}
+                        </a>
+                      );
+                    })
+                  }
+                </div>
+              </div>
+            );            
+          })
+        }
+      </div>
+    </div>
+
+    <div class="hidden md:flex items-center gap-4">
+      <a
+        href={siteConfig.socialLinks.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="rounded-full bg-foreground/10 px-4 py-2 text-sm font-semibold text-foreground transition-all hover:bg-foreground/20"
+      >
+        GitHub
+      </a>
+      <ThemeToggle />
+    </div>
+
+    <div class="hidden md:flex items-center gap-4">
+      <LanguageToggle />
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden flex items-center">
+      <button
+        id="mobile-menu-button"
+        type="button"
+        class="inline-flex items-center justify-center p-2 rounded-md text-foreground hover:text-white hover:bg-white/10 focus:outline-none transition-colors"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Open main menu</span>
+        <!-- Icon when menu is closed -->
+        <svg
+          id="menu-icon-closed"
+          class="block h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+        <!-- Icon when menu is open -->
+        <svg
+          id="menu-icon-open"
+          class="hidden h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+      <div class="ml-2">
+        <ThemeToggle />
+      </div>
+      <div class="ml-2">
+        <LanguageToggle />
+      </div>
+    </div>
+  </div>
+
+  <div class="hidden md:hidden" id="mobile-menu">
+    <div
+      class="space-y-1 border-b border-border bg-background/90 px-2 pb-3 pt-2 sm:px-3"
+    >
+      {
+        siteConfig.navLinks.map((link) => {
+            const href = localizedPath(lang, link.href);
+            return (
+              <div>
+              <a href={href}
+                class="block rounded-md px-3 py-2 text-base font-medium text-foreground transition-colors hover:bg-white/10 hover:text-primary"
+              >{t(link.key)}
+              </a>
+
+              <!-- Children (if exist) -->
+              {
+                link.children && (
+                  <div class="ml-4">
+                    {
+                      link.children.map((child) => {
+                        const childHref = localizedPath(lang, child.href);
+                        return (
+                          <a
+                            href={childHref}
+                            class="block px-3 py-1 text-sm text-muted-foreground hover:text-primary"
+                          >
+                            {t(child.key)}
+                          </a>
+                        );
+                      })
+                    }
+                  </div>
+                )
+              }
+              </div>
+            );
+          })
+      }
+      <a
+        href={siteConfig.socialLinks.github}
+        target="_blank"
+        class="block rounded-md px-3 py-2 text-base font-medium text-blue-400 transition-colors hover:cursor-pointer hover:bg-blue-500/10 hover:text-blue-300"
+        >GitHub</a
+      >
+    </div>
+  </div>
+</nav>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+      const container = btn.closest(".relative");
+      const menu = container?.querySelector(".dropdown-menu");
+      const arrow = btn.querySelector(".arrow");
+
+      if (!menu || !arrow) return;
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        const isOpen = menu.classList.contains("block");
+
+        // Close all dropdowns first
+        document.querySelectorAll(".dropdown-menu").forEach((m) => {
+          m.classList.remove("block");
+          m.classList.add("hidden");
+        });
+        document.querySelectorAll(".arrow").forEach((a) => {
+          a.textContent = "▼";
+          a.classList.remove("text-primary");
+        });
+
+        if (!isOpen) {
+          menu.classList.remove("hidden");
+          menu.classList.add("block");
+
+          arrow.textContent = "▲";
+          arrow.classList.add("text-primary");
+        }
+      });
+    });
+
+    // Click outside → close
+    document.addEventListener("click", () => {
+      document.querySelectorAll(".dropdown-menu").forEach((m) => {
+        m.classList.remove("block");
+        m.classList.add("hidden");
+      });
+      document.querySelectorAll(".arrow").forEach((a) => {
+        a.textContent = "▼";
+        a.classList.remove("text-primary");
+      });
+    });
+
+
+    const button = document.getElementById("mobile-menu-button");
+    const mobile_menu = document.getElementById("mobile-menu");
+    const iconClosed = document.getElementById("menu-icon-closed");
+    const iconOpen = document.getElementById("menu-icon-open");
+
+    // Remove old event listener if it exists to prevent multiple triggers
+    const newButton = button?.cloneNode(true);
+    if (newButton && button && button.parentNode) {
+      button.parentNode.replaceChild(newButton, button);
+    }
+
+    const finalButton = document.getElementById("mobile-menu-button");
+
+    finalButton?.addEventListener("click", () => {
+      const isExpanded = finalButton.getAttribute("aria-expanded") === "true";
+
+      finalButton.setAttribute("aria-expanded", String(!isExpanded));
+      mobile_menu?.classList.toggle("hidden");
+      iconClosed?.classList.toggle("hidden");
+      iconOpen?.classList.toggle("hidden");
+    });
+  });
+</script>

@@ -1,0 +1,94 @@
+---
+const {
+  title,
+  subtitle,
+  videoSrc,
+  poster,
+  id = "video-hero",
+  overlay = true,
+} = Astro.props;
+---
+
+<!-- <section
+  id={id}
+  class="relative h-screen min-h-[640px] w-full overflow-hidden bg-black"
+> -->
+<section
+  id={id}
+  class="relative h-[100svh] min-h-[560px] w-full overflow-hidden bg-black"
+>
+  <!-- Background video -->
+  <video
+    data-autoplay-video
+    class="absolute inset-0 h-full w-full object-cover"
+    src={videoSrc}
+    poster={poster || undefined}
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="auto"
+    aria-hidden="true"
+  ></video>
+
+  <!-- Dark overlay for readability -->
+  {
+    overlay && (
+      <div class="absolute inset-0 bg-black/45"></div>
+    )
+  }
+
+  <!-- Optional gradient for better text visibility -->
+  <!-- <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/20 to-background/30"></div> -->
+  <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-background/30"></div>
+
+  <!-- Text content -->
+  <div class="relative z-10 flex h-full w-full items-center justify-center px-4 text-center sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-5xl">
+      <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl">
+        {title}
+      </h1>
+
+      {
+        subtitle && (
+          <p class="mx-auto mt-6 max-w-3xl text-lg leading-8 text-white/85 sm:text-xl md:text-2xl">
+            {subtitle}
+          </p>
+        )
+      }
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <!-- <div class="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/80">
+    <div class="flex flex-col items-center gap-2 text-xs uppercase tracking-[0.3em]">
+      <span>Scroll</span>
+      <span class="h-8 w-px animate-pulse bg-white/70"></span>
+    </div>
+  </div> -->
+</section>
+
+<script>
+  const playAutoplayVideos = () => {
+    document.querySelectorAll("video[data-autoplay-video]").forEach((video) => {
+      if (!(video instanceof HTMLVideoElement)) return;
+
+      video.muted = true;
+      video.playsInline = true;
+
+      const playPromise = video.play();
+
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Browser may delay autoplay until the page is visible.
+        });
+      }
+    });
+  };
+
+  document.addEventListener("astro:page-load", playAutoplayVideos);
+  document.addEventListener("astro:after-swap", playAutoplayVideos);
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden) playAutoplayVideos();
+  });
+</script>

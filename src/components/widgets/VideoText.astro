@@ -1,0 +1,95 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+import Button from "@/components/ui/Button.astro";
+import { Icon } from "astro-icon/components";
+
+const {
+  id,
+  title,
+  eyebrow,
+  description,
+  videoSrc,
+  poster,
+  actions = [],
+  reverse = false,
+  isDark = false,
+  animate = false,
+  classes = {},
+} = Astro.props;
+
+const { container: containerClassProp = "" } = classes;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  animate={animate}
+  containerClass={`py-20 ${containerClassProp}`}
+>
+  <div
+    class={`grid items-center gap-10 lg:grid-cols-2 ${
+      reverse ? "lg:[&>*:first-child]:order-2" : ""
+    }`}
+  >
+    <!-- Video: first on mobile, right side on desktop -->
+    <div class="order-1 lg:order-2">
+      <div class="overflow-hidden rounded-2xl border border-border bg-card shadow-xl">
+        <video
+          class="h-full w-full object-cover"
+          src={videoSrc}
+          poster={poster}
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          aria-label={title}
+        >
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+
+    <!-- Text: below video on mobile, left side on desktop -->
+    <div class="order-2 lg:order-1">
+      {eyebrow && (
+        <p class="mb-3 text-sm font-semibold uppercase tracking-wide text-primary">
+          {eyebrow}
+        </p>
+      )}
+
+      {title && (
+        <h2 class="mb-6 text-3xl font-bold tracking-tight text-foreground md:text-5xl">
+          {title}
+        </h2>
+      )}
+
+      {description && (
+        <p class="mb-8 text-lg leading-8 text-muted-foreground">
+          {description}
+        </p>
+      )}
+
+      {
+        Array.isArray(actions) && actions.length > 0 && (
+          <div class="flex flex-col gap-4 sm:flex-row">
+            {actions.map((action) => (
+              <Button
+                href={action.href}
+                variant={action.variant ?? "primary"}
+                size="lg"
+                aria-label={action.ariaLabel}
+                class="w-full sm:w-auto"
+              >
+                {action.icon && (
+                  <Icon name={action.icon} class="mr-2 h-5 w-5 -ml-1" />
+                )}
+                {action.text}
+              </Button>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </div>
+</WidgetWrapper>

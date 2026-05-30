@@ -1,0 +1,83 @@
+{
+  "hero_title": "Robots at your service",
+  "hero_subtitle": "Helping Mankind and Nature Through Automation",
+  "site_description": "Helping Mankind and Nature Through Automation",
+  "not_found_description": "We are sorry we can not find the page you are looking for",
+
+
+  
+
+  "home_hero_title": "MBT-Systems for",
+  "home_hero_title_span": "Robotics & Automation",
+  "home_feature_tagline":"Current",
+  "home_feature_title":"Projects",
+  "home_feature_subtitle":"We are developping software solutions in Germany",
+  
+  "home_feature1_title":"Security Robot",
+  "home_feature1_description":"Quadruped Robot for patroling and alarming",
+  "home_feature2_title":"Mining Robot",
+  "home_feature2_description":"Automated inspection and cutter robot for coal mining",
+  "home_feature3_title":"Humanoid",
+  "home_feature3_description":"Bipedal robots designed to assist with household chores",
+
+  "home_videoText_eyebrow":"Engineered in Germany",
+  "home_videoText_title":"We cannot solve our problems with the same thinking we used when we created them — Albert Einstein",
+  "home_videoText_description":"That's why we are developping software solutions to make human life easier by thinking with different perspective",
+
+  "home_content2_fragment_h3tag":"Our Mindset",
+  "home_content2_fragment_description":"We provide a solution to industrial problems with futuristic innovations.",
+  "home_content2_actions_text":"Contact Us",
+  "home_content2_item1_title":"Tradition Redefined",
+  "home_content2_item1_description":"We reshape traditional industries by bring modern technologies.",
+  "home_content2_item2_title":"Innovation",
+  "home_content2_item2_description":"From robotics to webapp: we drive innovations that change industries.",
+  "home_content2_item3_title":"Far-Sightedness",
+  "home_content2_item3_description":"To change future plan today, Contact Us.",
+    
+  "home_content3_fragment_h3tag":"MBT received the BSFZ seal of approval",
+  "home_content3_fragment_description_first_half":"We are delighted to have been awarded the BSFZ seal as a company. This recognition confirms our ongoing efforts and investments in research and development. The BSFZ seal certifies the research and development activities of companies that have received at least one positive decision from the ",
+  "home_content3_fragment_description_second_half":"It is a valuable confirmation of our innovative strength and our commitment to constantly developing new solutions.",
+  "home_content3_fragment_description_atag":"Research Allowance Certification Agency (BSFZ).",
+
+
+
+  "form_name_label": "Name",
+  "form_name_placeholder": "Your name",
+  "form_email_label": "Email",
+  "form_email_placeholder": "your@email.com",
+  "form_message_label": "Message",
+  "form_message_placeholder": "How can we help you?",
+  "form_submit": "Send Message",
+  "form_subject": "New message from MBT website Contact-Page",
+
+  "contact_page_title":"Contact",
+  "contact_page_description": "Get in touch with us to discuss your next project.",
+  "contact_page_features_tagline": "Contact Means",
+  "contact_page_features_title": "We are here to help you",
+  "contact_page_features_subtitle": "Choose the communication channel you prefer. We respond in less than 24 hours.",
+  "contact_page_features1_title": "Phone",
+  "contact_page_features1_description": "+4923 456 7890",
+  "contact_page_features2_title": "Email",
+  "contact_page_features2_description": "info@mbt-systems.de",
+  "contact_page_features3_title": "Location",
+  "contact_page_features3_description": "Dieselstraße 11, 85757 Karlsfeld, Germay ",
+  "contact_page_features4_title": "Personalized Attention",
+  "contact_page_features4_description": "We understand your needs to offer tailored solutions.",
+  "contact_page_features5_title": "Technical Support",
+  "contact_page_features5_description": "We resolve any doubt or technical incident quickly.",
+  "contact_page_features6_title": "Strategic Consulting",
+  "contact_page_features6_description": "We advise you to ensure the success of your project.",
+
+
+  "home": "Home",
+  "about": "About",
+  "services": "Services",
+  "robotics": "Robotics",
+  "mining": "Mining",
+  "contact": "Contact Us",
+  "blog": "News",
+  "footer_LN":"Legal Notice",
+  "footer_GTC":"GTC",
+  "footer_P":"Privacy",
+  "footer_ARS":"All rights reserved. "
+}

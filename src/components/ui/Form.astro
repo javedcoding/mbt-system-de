@@ -1,0 +1,80 @@
+---
+import Button from "./Button.astro";
+import { useTranslations } from "@/utils/i18n";
+
+interface Props {
+  action?: string;
+  method?: "GET" | "POST";
+  lang?: "de" | "en";
+  redirect?: string;
+}
+
+const { action = "#", method = "POST", lang = "de", redirect, } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<form action={action} method={method} class="space-y-6">
+  <div>
+    <input
+      type="hidden"
+      name="_subject"
+      value={t("form_subject")}
+    />
+    {redirect && <input type="hidden" name="_redirect" value={redirect} />}
+    <!-- Honeypot field for spam protection -->
+    <input
+      type="text"
+      name="_gotcha"
+      class="hidden"
+      tabindex="-1"
+      autocomplete="off"
+    />
+    <div>
+
+      <label for="name" class="block text-sm font-medium text-foreground/80 mb-2"
+      >{t("form_name_label")}</label
+      >
+      <input
+      type="text"
+      name="name"
+      id="name"
+      autocomplete="name"
+      required
+      class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4"
+      placeholder={t("form_name_placeholder")}
+      />
+    </div>
+    <div>
+      <label for="email" class="block text-sm font-medium text-foreground/80 mb-2"
+      >{t("form_email_label")}</label
+      >
+      <input
+      type="email"
+      name="email"
+      id="email"
+      autocomplete="email"
+      required
+      class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4"
+      placeholder={t("form_email_placeholder")}
+      />
+    </div>
+    <div>
+      <label
+      for="message"
+      class="block text-sm font-medium text-foreground/80 mb-2">{t("form_message_label")}</label
+      >
+      <textarea
+      name="message"
+      id="message"
+      rows="4"
+      required
+      class="block w-full rounded-xl border-border bg-muted/50 px-4 py-3 text-foreground placeholder:text-muted-foreground focus:border-primary focus:ring-primary/20 transition-all border outline-none focus:ring-4 resize-none"
+      placeholder={t("form_message_placeholder")}></textarea>
+    </div>
+    <div>
+      <Button type="submit" size="lg" class="w-full sm:w-auto">
+        {t("form_submit")}
+      </Button>
+    </div>
+  </div>
+</form>

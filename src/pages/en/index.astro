@@ -1,0 +1,162 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { siteConfig } from "@/config/site";
+import VideoHero from "@/components/widgets/VideoHero.astro";
+import Hero from "@/components/widgets/Hero.astro";
+import Features from "@/components/widgets/Features.astro";
+import devImg from "@/assets/images/dev_balanced.png";
+import stairVid from "@/assets/videos/stairTest.mp4";
+import bsfzSealImg from "@/assets/images/bsfz_siegel.svg";
+import Content2 from "@/components/widgets/Content2.astro";
+import Content3 from "@/components/widgets/Content3.astro";
+import VideoText from "@/components/widgets/VideoText.astro";
+import { useTranslations } from "@/utils/i18n";
+const lang = "en"; // or "de"
+const t = useTranslations(lang);
+const metadata = {
+  title: `${siteConfig.name} — ${t("hero_title")}`,
+  description: `${t("hero_subtitle")}`,
+  // ignoreTitleTemplate: true,
+  // ignoreTitleTemplate: false,
+};
+
+---
+
+<BaseLayout {metadata}>
+  <VideoHero
+    title={`${siteConfig.name}`}
+    subtitle={`${t("site_description")}`}
+    poster="/videos/mbtHeroPoster.webp"
+    videoSrc=/videos/mbtHeroVideo.mp4
+  />
+
+  <Hero
+    title={`${t("home_hero_title")} <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("home_hero_title_span")}</span>`}
+    tagline="Innovation + Automation"
+    description={`${t("site_description")}`}
+    actions={[
+      // {
+      //   text: "Get Started",
+      //   href: "https://github.com/devgelo-labs/astro-starter-pro",
+      //   variant: "primary",
+      //   icon: "lucide:github",
+      // },
+      {
+        text: "Our Services",
+        href: `/${lang}/services`,
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+        ariaLabel: "Learn more about our services",
+      },
+    ]}
+  />
+  <Features
+    tagline=`${t("home_feature_tagline")}`
+    title=`${t("home_feature_title")}`
+    subtitle=`${t("home_feature_subtitle")}`
+    features={[
+      {
+        title: `${t("home_feature1_title")}`,
+        description: `${t("home_feature1_description")}`,
+        icon: "lucide:siren",
+        iconClass: "bg-blue-500/10 text-blue-400",
+      },
+      {
+        title: `${t("home_feature2_title")}`,
+        description: `${t("home_feature2_description")}`,
+        icon: "lucide:pickaxe",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: `${t("home_feature3_title")}`,
+        description: `${t("home_feature3_description")}`,
+        icon: "lucide:brain-cog",
+        iconClass: "bg-pink-500/10 text-black-400",
+      },
+    ]}
+  />
+  <!-- <VideoText
+    eyebrow={t("home_videoText_eyebrow")}
+    title={t("home_videoText_title")}
+    description={t("home_videoText_description")}
+    videoSrc={stairVid}
+    poster="/videos/robot-demo-poster.webp"
+    actions={[
+      {
+        text: t("services"),
+        href: `/${lang}/services`,
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+        ariaLabel: t("services"),
+      },
+    ]}
+    animate
+  /> -->
+  <VideoText
+    eyebrow={t("home_videoText_eyebrow")}
+    title={t("home_videoText_title")}
+    description={t("home_videoText_description")}
+    videoSrc={stairVid}
+    poster="/videos/robot-demo-poster.webp"
+    animate
+  />
+  <Content2
+    items={[
+      {
+        title: `${t("home_content2_item1_title")}`,
+        description: `${t("home_content2_item1_description")}`,
+        icon: "lucide:puzzle",
+        iconClass: "bg-blue-500/10 text-blue-400",
+      },
+      {
+        title: `${t("home_content2_item2_title")}`,
+        description: `${t("home_content2_item2_description")}`,
+        icon: "lucide:rocket",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: `${t("home_content2_item3_title")}`,
+        description: `${t("home_content2_item3_description")}`,
+        icon: "lucide:binoculars",
+        iconClass: "bg-pink-500/10 text-pink-400",
+      },
+    ]}
+    image={devImg}
+    imageAlt="Development"
+    actions={[
+      {
+        text: `${t("home_content2_actions_text")}`,
+        href: `/${lang}/contact`,
+        variant: "primary",
+        icon: "lucide:mail",
+        ariaLabel: `${t("home_content2_actions_text")}`,
+      },
+    ]}
+  >
+    <Fragment>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        Our Mindset
+      </h3>
+      We provide a solution to industrial problems with futuristic innovations.
+    </Fragment>
+  </Content2>
+  <Content3
+    image={bsfzSealImg}
+    imageAlt="bsfz Seal"
+    isReversed={true}
+  >
+    <Fragment>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        {t("home_content3_fragment_h3tag")}
+      </h3>
+      <p class="text-justify text-muted-foreground leading-7">
+        {t("home_content3_fragment_description_first_half")}
+        <a href="https://www.bescheinigung-forschungszulage.de" target="_blank" rel="noopener noreferrer" class="hover:text-primary">
+          <span class="underline">{t("home_content3_fragment_description_atag")}</span>
+        </a> 
+        {t("home_content3_fragment_description_second_half")}
+        
+      </p>
+    </Fragment>
+  </Content3>
+</BaseLayout>

@@ -1,0 +1,186 @@
+---
+import { siteConfig } from "@/config/site";
+import { useTranslations } from "@/utils/i18n";
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<footer
+  id="site-footer"
+  class="footer-robot-section relative mt-20 overflow-hidden border-t border-border bg-card"
+>
+  <!-- Animated robot background -->
+  <div class="f absolute inset-0 z-0 overflow-hidden opacity-30 dark:opacity-35">
+    <div class="robot-track absolute bottom-6 left-0">
+      <img
+        src="/footer_robot.webp"
+        alt=""
+        aria-hidden="true"
+        class="robot-image h-28 w-auto sm:h-36 md:h-44 lg:h-52"
+        loading="lazy"
+      />
+    </div>
+  </div>
+  <!-- Optional overlay so text stays readable -->
+  <div class="pointer-events-none absolute inset-0 z-0 bg-card/55"></div>
+
+  <!-- Footer content -->
+  <div class="relative z-10 mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col items-center justify-between gap-8 md:flex-row">
+      <div class="flex flex-col items-center gap-2 md:items-start">
+        <div class="flex items-center gap-3">
+          <img
+            src="/black_logo.svg"
+            alt="MBT Logo"
+            class="h-8 w-auto dark:hidden"
+          />
+          <img
+            src="/white_logo.svg"
+            alt="MBT Logo"
+            class="hidden h-8 w-auto dark:block"
+          />
+
+          <div class="flex flex-col">
+            <span class="text-lg font-bold text-foreground">
+              {siteConfig.name}
+            </span>
+            <p class="text-sm text-muted-foreground">
+              {t("hero_subtitle")}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center">
+        <p class="text-sm text-muted-foreground">
+          {t("contact")}: info@mbt-systems.de
+        </p>
+        <span class="text-sm text-muted-foreground">
+          Dieselstraße 11, 85757 Karlsfeld
+        </span>
+      </div>
+
+      <div class="flex flex-wrap items-center justify-center gap-6">
+        <a
+          href={siteConfig.socialLinks.twitter}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted-foreground transition-colors hover:text-primary"
+        >
+          Twitter
+        </a>
+        <a
+          href={siteConfig.socialLinks.github}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted-foreground transition-colors hover:text-primary"
+        >
+          GitHub
+        </a>
+        <a
+          href={siteConfig.socialLinks.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted-foreground transition-colors hover:text-primary"
+        >
+          LinkedIn
+        </a>
+        <a
+          href={siteConfig.socialLinks.facebook}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-muted-foreground transition-colors hover:text-primary"
+        >
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-4 border-t border-border pt-8 text-xs text-muted-foreground">
+      <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+        <div class="flex flex-col items-start gap-2 md:flex-row md:items-center md:gap-6">
+          {
+            siteConfig.footerLinks.map((link) => (
+              <a
+                href={`/${lang}${link.href}`}
+                class="transition-colors hover:text-primary"
+              >
+                {t(link.key)}
+              </a>
+            ))
+          }
+        </div>
+
+        <div class="text-left md:text-right">
+          Copyright &copy; {new Date().getFullYear()}
+          {siteConfig.author}. {t("footer_ARS")}
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .robot-track {
+    transform: translateX(-120%);
+    animation: robot-roll 12s linear infinite;
+    animation-play-state: paused;
+  }
+
+  .footer-robot-section.is-visible .robot-track {
+    animation-play-state: running;
+  }
+
+  .robot-image {
+    filter: drop-shadow(0 18px 24px rgb(0 0 0 / 0.3));
+  }
+
+  @keyframes robot-roll {
+    from {
+      transform: translateX(-120%);
+    }
+
+    to {
+      transform: translateX(120vw);
+    }
+  }
+
+  @media (max-width: 640px) {
+    .robot-track {
+      animation-duration: 9s;
+    }
+
+    .robot-image {
+      height: 7rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .robot-track {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const footer = document.getElementById("site-footer");
+
+    if (!footer) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        footer.classList.toggle("is-visible", entry.isIntersecting);
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    observer.observe(footer);
+  });
+</script>

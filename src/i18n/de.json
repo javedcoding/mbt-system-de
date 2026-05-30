@@ -1,0 +1,87 @@
+{
+  "hero_title": "Roboter zu Ihren Diensten",
+  "hero_subtitle": "Der Mensch und die Natur durch Automatisierung unterstützen",
+  "site_description": "Wir helfen Mensch und Natur durch Automatisierung",
+  "not_found_description": "Leider können wir die von Ihnen gesuchte Seite nicht finden",
+  
+  
+  
+  
+  "home_hero_title": "MBT-Systems für",
+  "home_hero_title_span": "Robotik und Automatisierung",
+  "home_feature_tagline":"Aktuell",
+  "home_feature_title":"Projekte",
+  "home_feature_subtitle":"Wir entwickeln Softwarelösungen in Deutschland",
+
+  "home_feature1_title":"Sicherheitsroboter",
+  "home_feature1_description":"Vierbeiniger Roboter für Patrouillen und Alarmierung",
+  "home_feature2_title":"Bergbauroboter",
+  "home_feature2_description":"Automatisierter Inspektions und Schneidroboter für den Kohlebergbau",
+  "home_feature3_title":"Humanoid",
+  "home_feature3_description":"Zweibeinige Roboter, die zur Unterstützung bei der Hausarbeit entwickelt wurden",
+  
+  "home_videoText_eyebrow":"Entwickelt in Deutschland",
+  "home_videoText_title":"Wir können unsere Probleme nicht mit derselben Denkweise lösen, mit der wir sie geschaffen haben — Albert Einstein",
+  "home_videoText_description":"Deshalb entwickeln wir Softwarelösungen, die das Leben der Menschen erleichtern, indem wir die Dinge aus einer anderen Perspektive betrachten",
+  
+  "home_content2_fragment_h3tag":"Unsere Einstellung",
+  "home_content2_fragment_description":"Wir bieten Lösungen für industrielle Probleme mit zukunftsweisenden Innovationen.",
+  "home_content2_actions_text":"Kontaktiere uns",
+  "home_content2_item1_title":"Tradition neu definiert",
+  "home_content2_item1_description":"Wir gestalten traditionelle Branchen neu, indem wir moderne Technologien einbringen.",
+  "home_content2_item2_title":"Innovation",
+  "home_content2_item2_description":"Von der Robotik bis zur Web-App: Wir treiben Innovationen voran, die ganze Branchen verändern.",
+  "home_content2_item3_title":"Weitsichtigkeit",
+  "home_content2_item3_description":"Wenn Sie Ihren Zukunftsplan noch heute ändern möchten, kontaktieren Sie uns.",
+  
+
+  "home_content3_fragment_h3tag":"MBT erhält das BSFZ-Siegel",
+  "home_content3_fragment_description_first_half":"Wir freuen uns sehr, als Unternehmen mit dem BSFZ-Siegel ausgezeichnet worden zu sein. Diese Anerkennung bestätigt unsere kontinuierlichen Anstrengungen und Investitionen im Bereich Forschung und Entwicklung. Das BSFZ-Siegel bescheinigt Unternehmen, die mindestens einen positiven Bescheid durch die ",
+  "home_content3_fragment_description_second_half":"erhalten haben, ihre Forschungs- und Entwicklungstätigkeit. Es ist eine wertvolle Bestätigung unserer Innovationskraft und unseres Engagements, immer neue Lösungen zu entwickeln.",
+  "home_content3_fragment_description_atag":"Bescheinigungsstelle Forschungszulage (BSFZ).",
+  
+  
+
+  
+  "form_name_label": "Name",
+  "form_name_placeholder": "Ihr Name",
+  "form_email_label": "E-Mail",
+  "form_email_placeholder": "ihre.email@beispiel.de",
+  "form_message_label": "Nachricht",
+  "form_message_placeholder": "Wie können wir Ihnen helfen?",
+  "form_submit": "Nachricht Senden",
+  "form_subject": "Neue Nachricht von der MBT Website Contact-Seit",
+
+  "contact_page_title":"Kontakt",
+  "contact_page_description": "Nehmen Sie Kontakt mit uns auf, um Ihr nächstes Projekt zu besprechen.",
+  "contact_page_features_tagline": "Kontaktmöglichkeiten",
+  "contact_page_features_title": "Wir sind für Sie da",
+  "contact_page_features_subtitle": "Wählen Sie den Kommunikationskanal, der Ihnen am besten gefällt. Wir antworten innerhalb von 24 Stunden.",
+  "contact_page_features1_title": "Telefon",
+  "contact_page_features1_description": "+4923 456 7890",
+  "contact_page_features2_title": "E-Mail",
+  "contact_page_features2_description": "info@mbt-systems.de",
+  "contact_page_features3_title": "Standort",
+  "contact_page_features3_description": "Dieselstraße 11, 85757 Karlsfeld, Germay ",
+  "contact_page_features4_title": "Individuelle Betreuung",
+  "contact_page_features4_description": "Wir verstehen Ihre Bedürfnisse und bieten Ihnen maßgeschneiderte Lösungen an.",
+  "contact_page_features5_title": "Technischer Support",
+  "contact_page_features5_description": "Wir klären alle Fragen und beheben technische Probleme umgehend.",
+  "contact_page_features6_title": "Strategische Beratung",
+  "contact_page_features6_description": "Wir empfehlen Ihnen, den Erfolg Ihres Projekts sicherzustellen.",
+
+
+
+
+  "home": "Startseite",
+  "about": "Über uns",
+  "services": "Dienstleistungen",
+  "robotics": "Robotik",
+  "mining": "Bergbau",
+  "contact": "Kontaktiere uns",
+  "blog": "News",
+  "footer_LN":"Impressum",
+  "footer_GTC":"AGB",
+  "footer_P":"Datenschutz",
+  "footer_ARS":"Alle Rechte vorbehalten."
+}

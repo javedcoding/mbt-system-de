@@ -1,0 +1,70 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Features from "@/components/widgets/Features.astro";
+import Content from "@/components/widgets/Content.astro";
+import Form from "@/components/ui/Form.astro";
+import { getLangFromUrl, useTranslations } from "@/utils/i18n";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const metadata = {
+  title: `${t("contact_page_title")}`,
+  description: `${t("contact_page_description")}`,
+};
+
+const visionText = `${t("contact_page_description")}`;
+---
+
+<BaseLayout {metadata}>
+  <Content tagline="Contact" title="Contact" description={visionText} />
+  <div
+    class="reveal mx-auto max-w-xl bg-card border border-border rounded-3xl p-8 shadow-sm mb-12 md:mb-16"
+  >
+    <Form action="https://formspree.io/f/xqejzyjg" lang={lang} redirect={`/${lang}/thanks`}/>
+  </div>
+  <Features
+    tagline=`${t("contact_page_features_tagline")}`
+    title=`${t("contact_page_features_title")}`
+    subtitle=`${t("contact_page_features_subtitle")}`
+    classes={{ container: "pt-0 md:pt-0" }}
+    features={[
+      {
+        title: `${t("contact_page_features1_title")}`,
+        description: `${t("contact_page_features1_description")}`,
+        icon: "lucide:phone",
+        iconClass: "bg-green-500/10 text-green-400",
+      },
+      {
+        title: `${t("contact_page_features2_title")}`,
+        description: `${t("contact_page_features2_description")}`,
+        icon: "lucide:mail",
+        iconClass: "bg-yellow-500/10 text-yellow-400",
+      },
+      {
+        title: `${t("contact_page_features3_title")}`,
+        description: `${t("contact_page_features3_description")}`,
+        icon: "lucide:map-pin",
+        iconClass: "bg-red-500/10 text-red-400",
+      },
+      {
+        title: `${t("contact_page_features4_title")}`,
+        description: `${t("contact_page_features4_description")}`,
+        icon: "lucide:user-check",
+        iconClass: "bg-blue-500/10 text-blue-400",
+      },
+      {
+        title: `${t("contact_page_features5_title")}`,
+        description: `${t("contact_page_features5_description")}`,
+        icon: "lucide:wrench",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: `${t("contact_page_features6_title")}`,
+        description: `${t("contact_page_features6_description")}`,
+        icon: "lucide:briefcase",
+        iconClass: "bg-pink-500/10 text-pink-400",
+      },
+    ]}
+  />
+</BaseLayout>

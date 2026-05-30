@@ -1,0 +1,71 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+const metadata = {
+  title: "Legal Notice",
+};
+---
+
+<BaseLayout {metadata}>
+  <section class="mx-auto max-w-3xl px-4 py-16">
+    
+    <!-- Title -->
+    <h1 class="text-4xl md:text-5xl font-extrabold mb-10 text-foreground">
+      Legal Notice
+    </h1>
+
+    <!-- Company Info -->
+    <p class="mb-6 text-muted-foreground">
+      <strong>Responsible according to § 5 Abs. 1 TMG, § 55 Abs. 2 RStV:</strong>
+    </p>
+
+    <p class="mb-6 leading-relaxed">
+      Mechatronic Bot Technologies GmbH<br />
+      Dieselstraße 11<br />
+      85757 Karlsfeld<br />
+      Germany
+    </p>
+
+    <!-- Contact -->
+    <p class="mb-2 text-xl font-bold text-foreground">
+      Contact Information:
+    </p>
+    <p class="mb-6 leading-relaxed">
+      08131 9995916<br />
+      info@mbt-systems.de
+    </p>
+
+    <!-- Legal Representative -->
+    <p class="mb-2 text-xl font-bold text-foreground">
+      Legal representatives:
+    </p>
+    <p class="mb-6 leading-relaxed">
+      Tsashikher Noov
+    </p>
+
+    <!-- Additional Info -->
+    <p class="mb-2">
+      <strong>Seat of the Company:</strong> 85757 Karlsfeld
+    </p>
+    <p class="mb-2">
+      <strong>Register Court:</strong> Munich, HRB292300
+    </p>
+    <p class="mb-2">
+      <strong>Sales Tax Identification Number:</strong> DE403849615
+    </p>
+
+    <!-- Source -->
+    <p class="mt-8">
+      <strong>Source:</strong>{" "}
+      <a
+        href="https://www.e-recht24.de/muster-disclaimer.html"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-primary hover:underline"
+      >
+        eRecht24
+      </a>
+    </p>
+
+  </section>
+</BaseLayout>

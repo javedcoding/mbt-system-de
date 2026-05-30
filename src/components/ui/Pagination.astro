@@ -1,0 +1,52 @@
+---
+import type { Page } from "astro";
+import type { CollectionEntry } from "astro:content";
+import { Icon } from "astro-icon/components";
+
+export interface Props {
+  page: Page<CollectionEntry<"blog">>;
+  lang?: "de" | "en";
+  class?: string;
+}
+
+const { page, lang, class: className } = Astro.props;
+const { currentPage, lastPage, url } = page;
+const { prev, next } = url;
+
+const previousLabel = lang === "de" ? "Zurück" : "Previous";
+const nextLabel = lang === "de" ? "Weiter" : "Next";
+const pageLabel = lang === "de" ? "Seite " : "Page ";
+const ofLabel = lang === "de" ? " von " : " of ";
+---
+
+{
+  (prev || next) && (
+    <div class:list={["flex justify-between mt-12", className]}>
+      {prev ? (
+        <a
+          href={prev}
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
+        >
+          <Icon name="tabler:arrow-left" class="w-4 h-4 mr-2" />
+          {previousLabel}
+        </a>
+      ) : (
+        <span />
+      )}
+      <div class="flex items-center text-sm text-muted-foreground">
+        {pageLabel} {currentPage} {ofLabel} {lastPage}
+      </div>
+      {next ? (
+        <a
+          href={next}
+          class="inline-flex items-center px-4 py-2 text-sm font-medium text-muted-foreground bg-card border border-border rounded-lg hover:bg-muted hover:text-foreground transition-colors"
+        >
+          {nextLabel}
+          <Icon name="tabler:arrow-right" class="w-4 h-4 ml-2" />
+        </a>
+      ) : (
+        <span />
+      )}
+    </div>
+  )
+}

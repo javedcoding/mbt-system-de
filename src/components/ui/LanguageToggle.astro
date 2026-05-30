@@ -1,0 +1,30 @@
+---
+const currentPath = Astro.url.pathname;
+const isGerman = currentPath.startsWith("/de");
+const targetLang = isGerman ? "en" : "de";
+
+// Replace only the language part of the URL
+const newPath = currentPath.replace(/^\/(en|de)/, `/${targetLang}`);
+---
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css"
+/>
+
+<a
+  href={newPath}
+  class="language-toggle-btn relative flex items-center gap-2 rounded-full px-3 py-2 text-foreground transition-colors hover:bg-foreground/10"
+  aria-label="Switch language"
+>
+  {isGerman ? (
+    <span class="flex items-center gap-2">
+      <span class="fi fi-gb text-lg leading-none"></span>
+      <span class="leading-none">EN</span>
+    </span>
+  ) : (
+    <span class="flex items-center gap-2">
+      <span class="fi fi-de text-lg leading-none"></span>
+      <span class="leading-none">DE</span>
+    </span>
+  )}
+</a>
