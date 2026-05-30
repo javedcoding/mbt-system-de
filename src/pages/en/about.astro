@@ -5,45 +5,47 @@ import Content2 from "@/components/widgets/Content2.astro";
 import Values from "@/components/widgets/Values.astro";
 import aboutImage from "@/assets/images/about-office.webp";
 import VideoHero from "@/components/widgets/VideoHero.astro";
-import VideoText from "@/components/widgets/VideoText.astro";
 import { useTranslations } from "@/utils/i18n";
 
 const metadata = {
   title: "About us",
   description:
     "Learn more about our vision, values, and the team behind Astro Starter Pro.",
-};
+  };
+  
+const lang = "en"; // or "de"
+const t = useTranslations(lang);
 
 const values = [
   {
-    title: "Innovation",
+    title: `${t("aboutus_values_1_title")}`,
     description:
-      "Curabitur dignissim, felis non sollicitudin molestie, urna mauris pellentesque velit, ut eleifend.",
+      `${t("aboutus_values_1_description")}`,
   },
   {
-    title: "Commitment",
+    title: `${t("aboutus_values_2_title")}`,
     description:
-      "Aenean condimentum finibus mauris, a fermentum justo pan eget. Sed ultricies, neque quis.",
+      `${t("aboutus_values_2_description")}`,
   },
   {
-    title: "Quality",
+    title: `${t("aboutus_values_3_title")}`,
     description:
-      "Donec sed orci tincidunt, aliquam nisl a, condimentum nunc. Nulla varius ex nec ante feugiat.",
+      `${t("aboutus_values_3_description")}`,
   },
   {
-    title: "Transparency",
+    title: `${t("aboutus_values_4_title")}`,
     description:
-      "Phasellus tristique, elit dapibus cursus facilisis, lorem augue fringilla nunc, vitae fermentum.",
+      `${t("aboutus_values_4_description")}`,
   },
   {
-    title: "Teamwork",
+    title: `${t("aboutus_values_5_title")}`,
     description:
-      "In hac habitasse platea dictumst. Vivamus adipiscing fermentum quam volutpat aliquam. Integer et.",
+      `${t("aboutus_values_5_description")}`,
   },
   {
-    title: "Excellence",
+    title: `${t("aboutus_values_6_title")}`,
     description:
-      "Fusce at massa nec sapien auctor gravida in in tellus. Vivamus a tristique metus, et molestie.",
+      `${t("aboutus_values_6_description")}`,
   },
 ];
 
@@ -52,8 +54,6 @@ const optimizedImage = await getImage({
   format: "webp",
 });
 
-const lang = "en"; // or "de"
-const t = useTranslations(lang);
 ---
 
 <BaseLayout {metadata}>
@@ -72,7 +72,7 @@ const t = useTranslations(lang);
     actions={[
       {
         text: "Contact Us",
-        href: "/contact",
+        href: `/${lang}/contact`,
         variant: "primary",
         icon: "lucide:mail",
       },
@@ -87,9 +87,9 @@ const t = useTranslations(lang);
   <Values
     items={values}
     columns={3}
-    tagline="Our Values"
-    title="What Defines Us"
-    subtitle="Principles that guide our daily work"
+    tagline=`${t("aboutus_values_tagline")}`
+    title=`${t("aboutus_values_title")}`
+    subtitle=`${t("aboutus_values_subtitle")}`
   />
   <Content2
     title=`${t("aboutus_Content2_2_title")}`
