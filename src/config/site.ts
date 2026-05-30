@@ -28,7 +28,6 @@ export const siteConfig = {
     ]},
     { key: "blog", href: "/blog" },
     { key: "contact", href: "/contact" },
-    { key: "career", href: "/career" },
   ],
   footerLinks: [
     { key: "footer_LN", href: "/legal" },

@@ -18,7 +18,13 @@ const application_ways = [
   {
     title: `${t("career_application_ways_item_1_title")}`,
     description: `${t("career_application_ways_item_1_description")}`,
-    icon: "lucide:bot",
+    icon: "simple-icons:indeed",
+    links: [
+      {
+        text: `${t("career_application_ways_item_1_linktext")}`,
+        href: `https://de.indeed.com/cmp/Mbt-Systems-1`,
+      },
+    ],
   },
   {
     title: `${t("career_application_ways_item_2_title")}`,
@@ -31,17 +37,17 @@ const from_us = [
   {
     title: t("career_hovering_1_title"),
     description: t("career_hovering_1_description"),
-    icon: "lucide:send",
+    icon: "lucide:users",
   },
   {
     title: t("career_hovering_2_title"),
     description: t("career_hovering_2_description"),
-    icon: "lucide:file-check",
+    icon: "lucide:book-open-text",
   },
   {
     title: t("career_hovering_3_title"),
     description: t("career_hovering_3_description"),
-    icon: "lucide:messages-square",
+    icon: "lucide:wallpaper",
   },
   {
     title: t("career_hovering_4_title"),
@@ -65,17 +71,17 @@ const metadata = {
     features={[
       {
         title: `${t("career_feature1_title")}`,
-        icon: "lucide:siren",
+        icon: "lucide:lightbulb",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
         title: `${t("career_feature2_title")}`,
-        icon: "lucide:pickaxe",
+        icon: "lucide:brain-cog",
         iconClass: "bg-purple-500/10 text-purple-400",
       },
       {
         title: `${t("career_feature3_title")}`,
-        icon: "lucide:brain-cog",
+        icon: "lucide:brain-circuit",
         iconClass: "bg-pink-500/10 text-black-400",
       },
     ]}
