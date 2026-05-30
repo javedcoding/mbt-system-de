@@ -1,0 +1,139 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import CareerList from "@/components/widgets/CareerList.astro";
+import HoveringCircle from "@/components/widgets/HoveringCircle.astro";
+import Hero from "@/components/widgets/Hero.astro";
+import Features from "@/components/widgets/Features.astro";
+import Content from "@/components/widgets/Content.astro";
+import Content2 from "@/components/widgets/Content2.astro";
+import studentImg from "@/assets/images/careers/student.png";
+import youngProfImg from "@/assets/images/careers/young.png";
+import experiencedProfImg from "@/assets/images/careers/experienced.png";
+import { useTranslations } from "@/utils/i18n";
+
+const lang = "en"; // or "de"
+const t = useTranslations(lang);
+
+const application_ways = [
+  {
+    title: `${t("career_application_ways_item_1_title")}`,
+    description: `${t("career_application_ways_item_1_description")}`,
+    icon: "lucide:bot",
+  },
+  {
+    title: `${t("career_application_ways_item_2_title")}`,
+    description: `${t("career_application_ways_item_2_description")}`,
+    icon: "lucide:mail",
+  },
+];
+
+const from_us = [
+  {
+    title: t("career_hovering_1_title"),
+    description: t("career_hovering_1_description"),
+    icon: "lucide:send",
+  },
+  {
+    title: t("career_hovering_2_title"),
+    description: t("career_hovering_2_description"),
+    icon: "lucide:file-check",
+  },
+  {
+    title: t("career_hovering_3_title"),
+    description: t("career_hovering_3_description"),
+    icon: "lucide:messages-square",
+  },
+  {
+    title: t("career_hovering_4_title"),
+    description: t("career_hovering_4_description"),
+    icon: "lucide:handshake",
+  },
+];
+
+const metadata = {
+  title: `${t("service_metadata_title")}`,
+  description:
+    `${t("service_metadata_description")}`,
+};
+---
+
+<BaseLayout {metadata}>
+  <Features
+    tagline=`${t("career_feature_tagline")}`
+    title=`${t("career_feature_title")}`
+    subtitle=`${t("career_feature_subtitle")}`
+    features={[
+      {
+        title: `${t("career_feature1_title")}`,
+        icon: "lucide:siren",
+        iconClass: "bg-blue-500/10 text-blue-400",
+      },
+      {
+        title: `${t("career_feature2_title")}`,
+        icon: "lucide:pickaxe",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: `${t("career_feature3_title")}`,
+        icon: "lucide:brain-cog",
+        iconClass: "bg-pink-500/10 text-black-400",
+      },
+    ]}
+  />
+  <HoveringCircle 
+    title={t("career_hovering_title")}
+    items={from_us} 
+  />
+  <Hero
+    title={`${t("career_hero_title")} <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("career_hero_title_span")}</span>`}
+    tagline={`${t("career_hero_tagline")}`}
+    description={`${t("career_hero_description")}`}
+  />
+  <CareerList services={application_ways} classes={{ container: "pt-0 md:pt-0" }} />
+  <Content
+  tagline=`${t("career_content_tagline")}`
+  title=`${t("career_content_title")}`
+  description={[
+    `${t("career_content_description")}`,     
+  ]}
+    classes={{ container: "pb-0 md:pb-0" }}
+    />
+    <Content2
+    image={studentImg}
+    imageAlt="Modern Web Development"
+    classes={{ container: "pt-0 md:pt-0" }}
+    >
+    <Fragment>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        {t("career_content2_1_title")}
+      </h3>
+      {t("career_content2_1_description")}
+    </Fragment>
+  </Content2>
+  
+  <Content2
+    isReversed={true}
+    image={youngProfImg}
+    imageAlt="SEO Strategies"
+  >
+    <Fragment>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        {t("career_content2_2_title")}
+      </h3>
+      {t("career_content2_2_description")}
+    </Fragment>
+  </Content2>
+  <Content2
+    image={experiencedProfImg}
+    imageAlt="Modern Web Development"
+    classes={{ container: "pt-0 md:pt-0" }}
+  >
+    <Fragment>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        {t("career_content2_3_title")}
+      </h3>
+      {t("career_content2_3_description")}
+    </Fragment>
+  </Content2>
+
+</BaseLayout>

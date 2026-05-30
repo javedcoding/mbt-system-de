@@ -124,6 +124,48 @@
   "service_Content2_4_Fragment_title":"Modernisierung des Bergbausystems",
   "service_Content2_4_Fragment_description":"Wir sind auf die Entwicklung und Inbetriebnahme skalierbarer Mining-Software und -Hardware spezialisiert, um die Automatisierungssysteme Ihres bestehenden technologischen Ökosystems zu modernisieren.",
 
+
+
+
+  "career_feature_tagline":"Hallo",
+  "career_feature_title":"Schau dir die Kriterien an!",
+  "career_feature_subtitle":"Wir suchen nach kreativen Köpfen und motivierten Talenten, die mit uns die Zukunft gestalten wollen. Bist du bereit, Teil unseres Teams zu werden? ",
+  
+  "career_hovering_title":"Was du bei uns findest:",
+  "career_hovering_1_title":"Zusammenhalt",
+  "career_hovering_1_description":"Was bei uns zählt, ist der Zusammenhalt. In unserem Team mit flachen Hierarchien unterstützen wir uns gegenseitig und helfen dir dabei, dein volles Potenzial auszuschöpfen.",
+  "career_hovering_2_title":"Innovative + Spannende Projekte",
+  "career_hovering_2_description":"Arbeite an spannenden und innovativen Projekten, die wirklich etwas bewegen. Bei uns hast du die Möglichkeit, deine Ideen einzubringen, an Lösungen zu arbeiten und neue Technologien zu erforschen.",
+  "career_hovering_3_title":"Inspirierendes Umfeld",
+  "career_hovering_3_description":"Wir bieten außerdem ein inspirierendes Umfeld, das Kreativität und Produktivität fördert. Unser Büro ist modern ausgestattet und bietet alles, was du brauchst, um dich wohlzufühlen und effektiv zu arbeiten.",
+  "career_hovering_4_title":"Vielfalt",
+  "career_hovering_4_description":"Wir schätzen und fördern Vielfalt in all ihren Facetten. Unterschiedliche Perspektiven und Erfahrungen bereichern unsere Arbeit und tragen maßgeblich zu unserem Erfolg bei. Bei uns ist jeder willkommen, unabhängig von Herkunft, Geschlecht, Alter oder Lebensstil. Wir glauben fest daran, dass ein vielfältiges Team kreativer und innovativer ist und uns hilft, die besten Lösungen zu finden.",
+
+  "career_feature1_title":"Kreativität",
+  "career_feature2_title":"Technikversiert",
+  "career_feature3_title":"Zukunftsorientiert ",
+    
+  "career_hero_tagline": "Curious?",
+  "career_hero_title": "Apply & become part of our team!",
+  "career_hero_title_span": "We look forward to know you.",
+  "career_hero_description": "Send us your application to bewerbung@mbt-systems.de and tell us why you are the perfect fit for us.",
+  
+  "career_application_ways_item_1_title": "Job Vacancies",
+  "career_application_ways_item_1_description": "You can find our current vacancies on Indeed.",
+  "career_application_ways_item_2_title": "Unsolicited Application",
+  "career_application_ways_item_2_description": "No vacancies that suit you? No problem! Send us your application to bewerbung@mbt-systems.de Your skills and passion could be exactly what we need!",
+  
+  "career_content_tagline": "Prospects",
+  "career_content_title": "We have something for everyone!",
+  "career_content_description": "Many more opotunites are hidden for future",
+  
+  "career_content2_1_title": "Student or Trainee",
+  "career_content2_1_description": "Are you in the middle of your studies or just starting your apprenticeship and want to gain practical experience? We offer you the perfect opportunity to combine theory and practice, from internships to final theses. Here you can work on exciting projects, learn from experienced colleagues and develop your skills. We support you in setting your professional course. Take the first step and become part of a team that will support your development and give you the decisive boost for your future career! ",
+  "career_content2_2_title": "Young Professional",
+  "career_content2_2_description": "You've finished university and are ready to conquer the world? We also offer you the perfect launch pad for your future career. Here you can contribute your fresh ideas, learn from experienced specialists and work in an environment that promotes innovation and creativity. We believe in the potential of each individual and give you the tools to achieve great things. Take the first step and become part of a team that is shaping the future - yours and ours!",
+  "career_content2_3_title":"Experienced Professional",
+  "career_content2_3_description":" You have already gained valuable experience and are ready for the next step in your career? We also offer you the opportunity to use and develop your expertise in exciting projects. Here you can develop your skills and innovative solutions and work in a team that values and promotes your experience. We believe in continuous growth and offer you the platform to take your career to the next level. Become part of a company that values your passion and expertise - and together we will shape the future!",
+
   
 
   
@@ -164,6 +206,7 @@
   "mining": "Bergbau",
   "contact": "Kontaktiere uns",
   "blog": "News",
+  "career":"Karriere",
   "footer_LN":"Impressum",
   "footer_GTC":"AGB",
   "footer_P":"Datenschutz",
