@@ -4,6 +4,9 @@ import { getImage } from "astro:assets";
 import Content2 from "@/components/widgets/Content2.astro";
 import Values from "@/components/widgets/Values.astro";
 import aboutImage from "@/assets/images/about-office.webp";
+import VideoHero from "@/components/widgets/VideoHero.astro";
+import VideoText from "@/components/widgets/VideoText.astro";
+import { useTranslations } from "@/utils/i18n";
 
 const metadata = {
   title: "About us",
@@ -48,17 +51,22 @@ const optimizedImage = await getImage({
   src: aboutImage,
   format: "webp",
 });
+
+const lang = "en"; // or "de"
+const t = useTranslations(lang);
 ---
 
 <BaseLayout {metadata}>
+  <VideoHero
+      title={`<span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("aboutus_videoHero_title")}</span>`}
+      poster="/videos/mbtHeroPoster.webp"
+      videoSrc=/videos/about_us.mp4
+    />
   <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
   <Content2
-    title="Our Vision"
-    description={[
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    ]}
-    tagline="About"
+    title=`${t("aboutus_Content2_1_title")}`
+    description={[`${t("aboutus_Content2_1_description")}`]}
+    tagline=`${t("about")}`
     image={aboutImage}
     imageAlt="Modern web development office"
     actions={[
@@ -82,5 +90,27 @@ const optimizedImage = await getImage({
     tagline="Our Values"
     title="What Defines Us"
     subtitle="Principles that guide our daily work"
+  />
+  <Content2
+    title=`${t("aboutus_Content2_2_title")}`
+    description={[`${t("aboutus_Content2_2_description")}`]}
+    tagline=`${t("about")}`
+    image={aboutImage}
+    imageAlt="Modern web development office"
+    actions={[
+      // {
+      //   text: "Contact Us",
+      //   href: "/contact",
+      //   variant: "primary",
+      //   icon: "lucide:mail",
+      // },
+      {
+        text: "View Details",
+        href: `/${lang}/services/mining`,
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+      },
+    ]}
+    isReversed={true}
   />
 </BaseLayout>

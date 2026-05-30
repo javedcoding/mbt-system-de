@@ -46,7 +46,7 @@ const {
   <div class="relative z-10 flex h-full w-full items-center justify-center px-4 text-center sm:px-6 lg:px-8">
     <div class="mx-auto max-w-5xl">
       <h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-7xl lg:text-8xl">
-        {title}
+        <Fragment set:html={title} />
       </h1>
 
       {
