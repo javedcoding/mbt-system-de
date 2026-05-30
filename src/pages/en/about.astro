@@ -5,16 +5,18 @@ import Content2 from "@/components/widgets/Content2.astro";
 import Values from "@/components/widgets/Values.astro";
 import aboutImage from "@/assets/images/about-office.webp";
 import VideoHero from "@/components/widgets/VideoHero.astro";
+import aboutVideo from "@/assets/videos/about_us.mp4";
 import { useTranslations } from "@/utils/i18n";
 
-const metadata = {
-  title: "About us",
-  description:
-    "Learn more about our vision, values, and the team behind Astro Starter Pro.",
-  };
-  
 const lang = "en"; // or "de"
 const t = useTranslations(lang);
+
+const metadata = {
+  title: `${t("aboutus_metadata_title")}`,
+  description:
+    `${t("aboutus_metadata_description")}`  
+  };
+  
 
 const values = [
   {
@@ -60,7 +62,7 @@ const optimizedImage = await getImage({
   <VideoHero
       title={`<span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("aboutus_videoHero_title")}</span>`}
       poster="/videos/mbtHeroPoster.webp"
-      videoSrc=/videos/about_us.mp4
+      videoSrc={aboutVideo}
     />
   <link slot="head" rel="preload" href={optimizedImage.src} as="image" />
   <Content2

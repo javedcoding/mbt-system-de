@@ -41,6 +41,9 @@
   
   
   
+
+  "aboutus_metadata_title":"About Us",
+  "aboutus_metadata_description":"Learn more about our vision, values, and the team behind MBT Systems.",
   
   "aboutus_videoHero_title":"From Quadrupeds to Humanoid automation",
   
@@ -68,6 +71,60 @@
 
   "aboutus_Content2_3_title":"Our Mission",
   
+
+
+
+  "service_metadata_title":"Services",
+  "service_metadata_description":"Discover our Robotics Solution development, Software optimization, Mining Technology development and Technology Consulting services.",
+  
+  "service_Content_1_tagline":"Services",
+  "service_Content_1_title":"Our Services",
+  "service_Content_1_description":"Comprehensive solutions designed to maximize the potential of your industrial presence.",
+
+  "service_ServiceList_1_title":"Robotics Solution",
+  "service_ServiceList_1_description":"Quadruped and Humanoid robot to solve Industrial and personal repititive work problems",
+  "service_ServiceList_2_title":"Mining Technology",
+  "service_ServiceList_2_description":"Mining automation and machinery development for functional work process, safety and security",
+  "service_ServiceList_3_title":"Software Development",
+  "service_ServiceList_3_description":"IT and Software solutions for automation, autonomous nagivation and mapping",
+
+  "service_Content_2_tagline":"Robotics Development",
+  "service_Content_2_title":"Advanced Robotics",
+  "service_Content_2_description":"We specialize in building fast, secure, and scalable Robotic System using the latest technologies. We transform your vision into an impactful system for better experience.",
+
+  "service_Content2_1_items_1_title":"Fast Responsive Eco System",
+  "service_Content2_1_items_1_description":"Your industry will have secured and responsive alarm system.",
+  "service_Content2_1_items_2_title":"Optimized Performance",
+  "service_Content2_1_items_2_description":"Fast and improved performance of your company with modern technology as helping hand.",
+  "service_Content2_1_Fragment_title":"Modern Quadruped Eco System",
+  "service_Content2_1_Fragment_description":"We specialize in building fast, secure and scalable security system using the latest quadruped robot technologies. We transform your visionary need into an impactful running digital system.",
+  
+  "service_Content2_2_items_1_title":"Fast Responsive Reinforcement",
+  "service_Content2_2_items_1_description":"Your industry or house will have responsive helping hand system.",
+  "service_Content2_2_items_2_title":"Optimized Task Performance",
+  "service_Content2_2_items_2_description":"Fast and improved performance of your human tasks like folding clothes, dish washing or cooking",
+  "service_Content2_2_Fragment_title":"Modern Humanoid Eco System",
+  "service_Content2_2_Fragment_description":"We specialize in building fast, secure and scalable product handling and human task handling system using the latest humanoid robot technologies for both home and industries",
+
+  "service_Content_3_tagline":"Mining Technology",
+  "service_Content_3_title":"Advanced Mining",
+  "service_Content_3_description":"We specialize in building safe, secure, and automated Mining System using the latest technologies. We transform your need into an impactful system for faster process of mining goods",
+
+  "service_Content2_3_items_1_title":"Fast Responsive Control System",
+  "service_Content2_3_items_1_description":"Your mines will have industry standard safe controlling system.",
+  "service_Content2_3_items_2_title":"Automated Task Performance",
+  "service_Content2_3_items_2_description":"Automatic cutting, transporting, safety inspection and alarming system will make your mining process faster and secured",
+  "service_Content2_3_Fragment_title":"Modern Mining Eco System",
+  "service_Content2_3_Fragment_description":"We specialize in developping and commissiong fast, secure and scalable mining system and automation using the latest and advanced industry standard technologies.",
+
+  "service_Content2_4_items_1_title":"Reliable Upgradation",
+  "service_Content2_4_items_1_description":"Your industrial eco system will be upgraded without hampering your pipeline.",
+  "service_Content2_4_items_2_title":"Advanced Functionality",
+  "service_Content2_4_items_2_description":"Your mining technology will be improved in performance with minimal changes of your current equipments",
+  "service_Content2_4_Fragment_title":"Upgrading Mining System",
+  "service_Content2_4_Fragment_description":"We specialize in developping and commissiong scalable mining software and hardware for automation system upgradation for your existing coherent technological eco-system.",
+
+
 
 
   "form_name_label": "Name",

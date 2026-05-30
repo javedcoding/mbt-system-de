@@ -6,59 +6,63 @@ import Content2 from "@/components/widgets/Content2.astro";
 import webDevImg from "@/assets/images/services/web-dev.webp";
 import seoImg from "@/assets/images/services/seo.webp";
 import consultingImg from "@/assets/images/services/consulting.webp";
+import { useTranslations } from "@/utils/i18n";
+
+const lang = "de"; // or "de"
+const t = useTranslations(lang);
 
 const services = [
   {
-    title: "Web Development",
-    description: "Static and dynamic sites built for the modern era.",
-    icon: "lucide:globe",
+    title: `${t("service_ServiceList_1_title")}`,
+    description: `${t("service_ServiceList_1_description")}`,
+    icon: "lucide:bot",
   },
   {
-    title: "SEO Optimization",
-    description: "We ensure your content is found by those looking for it.",
-    icon: "lucide:search",
+    title: `${t("service_ServiceList_2_title")}`,
+    description: `${t("service_ServiceList_2_description")}`,
+    icon: "lucide:pickaxe",
   },
   {
-    title: "IT Consulting",
-    description: "Technical advice to scale your projects to the next level.",
-    icon: "lucide:rocket",
+    title: `${t("service_ServiceList_3_title")}`,
+    description: `${t("service_ServiceList_3_description")}`,
+    icon: "lucide:monitor-cog",
   },
 ];
 const metadata = {
-  title: "Services",
+  title: `${t("service_metadata_title")}`,
   description:
-    "Discover our web development, SEO optimization, and technology consulting services.",
+    `${t("service_metadata_description")}`,
 };
 ---
 
 <BaseLayout {metadata}>
   <Content
-    tagline="Services"
-    title="Our Services"
+    tagline=`${t("service_Content_1_tagline")}`
+    title=`${t("service_Content_1_title")}`
     description={[
-      "Comprehensive solutions designed to maximize the potential of your digital presence.",
+      `${t("service_Content_1_description")}`,
     ]}
   />
   <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
   <Content
-    tagline="Web Development"
-    title="Modern Web Development"
+    tagline=`${t("service_Content_2_tagline")}`
+    title=`${t("service_Content_2_title")}`
     description={[
-      "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
+      `${t("service_Content_2_description")}`,     
     ]}
     classes={{ container: "pb-0 md:pb-0" }}
   />
   <Content2
     items={[
       {
-        title: "Responsive Design",
+        title: `${t("service_Content2_1_items_1_title")}`,
         description:
-          "Your site will look perfect on any device, from mobiles to desktop screens.",
+          `${t("service_Content2_1_items_1_description")}`,
       },
       {
-        title: "Optimized Performance",
+        title: `${t("service_Content2_1_items_2_title")}`,
         description:
-          "Fast loading to improve user experience and SEO positioning.",
+          `${t("service_Content2_1_items_2_description")}`,
       },
     ]}
     image={webDevImg}
@@ -67,10 +71,9 @@ const metadata = {
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Modern Web Development
+        {t("service_Content2_1_Fragment_title")}
       </h3>
-      We specialize in building fast, secure, and scalable websites using the latest
-      technologies. We transform your vision into an impactful digital experience.
+      {t("service_Content2_1_Fragment_description")}
     </Fragment>
   </Content2>
 
@@ -78,14 +81,14 @@ const metadata = {
     isReversed={true}
     items={[
       {
-        title: "SEO Audit",
+        title: `${t("service_Content2_2_items_1_title")}`,
         description:
-          "We deeply analyze your website to identify technical and content improvement opportunities.",
+          `${t("service_Content2_2_items_1_description")}`,
       },
       {
-        title: "Content Strategy",
+        title: `${t("service_Content2_2_items_2_title")}`,
         description:
-          "We create relevant content plans that attract and retain your target audience.",
+          `${t("service_Content2_2_items_2_description")}`,
       },
     ]}
     image={seoImg}
@@ -93,24 +96,56 @@ const metadata = {
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        SEO Optimization
+        {t("service_Content2_2_Fragment_title")}
       </h3>
-      We help your business get found by the right people. Our organic positioning
-      strategies are designed to improve your organic visibility.
+      {t("service_Content2_2_Fragment_description")}
+    </Fragment>
+  </Content2>
+
+  <Content
+    tagline=`${t("service_Content_3_tagline")}`
+    title=`${t("service_Content_3_title")}`
+    description={[
+      `${t("service_Content_3_description")}`,     
+    ]}
+    classes={{ container: "pb-0 md:pb-0" }}
+  />
+  <Content2
+    items={[
+      {
+        title: `${t("service_Content2_3_items_1_title")}`,
+        description:
+          `${t("service_Content2_3_items_1_description")}`,
+      },
+      {
+        title: `${t("service_Content2_3_items_2_title")}`,
+        description:
+         `${t("service_Content2_3_items_2_description")}`,
+      },
+    ]}
+    image={seoImg}
+    imageAlt="Mining Technologies"
+  >
+    <Fragment>
+      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
+        {t("service_Content2_3_Fragment_title")}
+      </h3>
+      {t("service_Content2_3_Fragment_description")}
     </Fragment>
   </Content2>
 
   <Content2
+    isReversed={true}
     items={[
       {
-        title: "Digital Transformation",
+        title: `${t("service_Content2_4_items_1_title")}`,
         description:
-          "We guide you in adopting new technologies to optimize your business processes.",
+          `${t("service_Content2_4_items_1_description")}`,
       },
       {
-        title: "Software Architecture",
+        title: `${t("service_Content2_4_items_2_title")}`,
         description:
-          "We design robust and scalable systems prepared for future growth.",
+         `${t("service_Content2_4_items_2_description")}`,
       },
     ]}
     image={consultingImg}
@@ -118,11 +153,9 @@ const metadata = {
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Technology Consulting
+        {t("service_Content2_4_Fragment_title")}
       </h3>
-      We accompany you in critical decision-making. We evaluate your current infrastructure
-      and design personalized roadmaps to take your company to the next technological
-      level.
+      {t("service_Content2_4_Fragment_description")}
     </Fragment>
   </Content2>
 </BaseLayout>

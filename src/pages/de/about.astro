@@ -7,14 +7,15 @@ import aboutImage from "@/assets/images/about-office.webp";
 import VideoHero from "@/components/widgets/VideoHero.astro";
 import { useTranslations } from "@/utils/i18n";
 
-const metadata = {
-  title: "About us",
-  description:
-    "Learn more about our vision, values, and the team behind Astro Starter Pro.",
-  };
-  
 const lang = "de"; // or "de"
 const t = useTranslations(lang);
+
+const metadata = {
+  title: `${t("aboutus_metadata_title")}`,
+  description:
+    `${t("aboutus_metadata_description")}`  
+  };
+  
 
 const values = [
   {

@@ -41,7 +41,9 @@
   
 
 
-
+  "aboutus_metadata_title":"Über uns",
+  "aboutus_metadata_description":"Erfahren Sie mehr über unsere Vision, unsere Werte und das Team hinter MBT Systems.",
+  
   "aboutus_videoHero_title":"Von vierbeinigen Robotern bis hin zu humanoiden Robotern",
   
   "aboutus_Content2_1_title":"Unsere Vision",
@@ -68,6 +70,59 @@
   "aboutus_Content2_2_description":"Unsere Wurzeln liegen im Bergbau, und wir sind auf die Entwicklung hochentwickelter Steuergeräte spezialisiert. Wir bieten komplette Systemlösungen für vollautonome Untertage-Bergbausysteme für den Kohlebergbau. Als Marktführer in diesem Sektor setzen wir Maßstäbe. An unserem Hauptsitz in Deutschland befindet sich ein Ingenieurbüro, das sich auf die Entwicklung und Forschung im Bereich Maschinenbausoftware spezialisiert hat. Wir haben unser Tätigkeitsfeld erweitert und einen neuen Geschäftsbereich im Bereich Robotik gegründet.",
 
   "aboutus_Content2_3_title":"Our Mission",
+
+
+
+
+  "service_metadata_title":"Dienstleistungen",
+  "service_metadata_description":"Entdecken Sie unsere Dienstleistungen in den Bereichen Entwicklung von Robotiklösungen, Softwareoptimierung, Entwicklung von Bergbautechnologie und Technologieberatung.",
+  
+  "service_Content_1_tagline":"Dienstleistungen",
+  "service_Content_1_title":"Unsere Dienstleistungen",
+  "service_Content_1_description":"Umfassende Lösungen, die darauf ausgelegt sind, das Potenzial Ihres industriellen Auftretens voll auszuschöpfen.",
+
+  "service_ServiceList_1_title":"Robotiklösung",
+  "service_ServiceList_1_description":"Vierbeinige und humanoide Roboter zur Lösung von Problemen bei sich wiederholenden Arbeiten in der Industrie und im privaten Bereich",
+  "service_ServiceList_2_title":"Bergbautechnik",
+  "service_ServiceList_2_description":"Automatisierung im Bergbau und Maschinenentwicklung für effiziente Arbeitsabläufe, Sicherheit und Schutz",
+  "service_ServiceList_3_title":"Softwareentwicklung",
+  "service_ServiceList_3_description":"IT- und Softwarelösungen für Automatisierung, autonome Navigation und Kartierung",
+
+  "service_Content_2_tagline":"Entwicklung im Bereich Robotik",
+  "service_Content_2_title":"Fortgeschrittene Robotik",
+  "service_Content_2_description":"Wir sind auf die Entwicklung schneller, sicherer und skalierbarer Robotersysteme unter Einsatz modernster Technologien spezialisiert. Wir setzen Ihre Vision in ein leistungsstarkes System um, das für ein besseres Erlebnis sorgt.",
+
+  "service_Content2_1_items_1_title":"Schnelles, reaktionsschnelles Ökosystem",
+  "service_Content2_1_items_1_description":"Ihr Unternehmen wird über ein sicheres und reaktionsschnelles Alarmsystem verfügen.",
+  "service_Content2_1_items_2_title":"Optimierte Leistung",
+  "service_Content2_1_items_2_description":"Schnelle und verbesserte Leistungsfähigkeit Ihres Unternehmens dank moderner Technologie als Hilfsmittel.",
+  "service_Content2_1_Fragment_title":"Modernes Ökosystem der Vierbeiner",
+  "service_Content2_1_Fragment_description":"Wir sind auf die Entwicklung schneller, sicherer und skalierbarer Sicherheitssysteme spezialisiert, die auf den neuesten Technologien für vierbeinige Roboter basieren. Wir setzen Ihre visionären Anforderungen in ein leistungsstarkes, funktionsfähiges digitales System um.",
+  
+  "service_Content2_2_items_1_title":"Schnelle, reaktionsschnelle Verstärkung",
+  "service_Content2_2_items_1_description":"In Ihrer Branche oder Ihrem Unternehmen wird es ein reaktionsschnelles Hilfesystem geben.",
+  "service_Content2_2_items_2_title":"Optimierte Aufgabenausführung",
+  "service_Content2_2_items_2_description":"Schnelle und verbesserte Erledigung alltäglicher Aufgaben wie Wäsche zusammenlegen, Geschirr spülen oder kochen",
+  "service_Content2_2_Fragment_title":"Modernes humanoides Ökosystem",
+  "service_Content2_2_Fragment_description":"Wir sind auf die Entwicklung schneller, sicherer und skalierbarer Systeme für die Handhabung von Produkten und die Ausführung menschlicher Aufgaben spezialisiert, wobei wir die neuesten Technologien im Bereich humanoider Roboter sowohl für den privaten als auch für den industriellen Bereich einsetzen.",
+
+  "service_Content_3_tagline":"Bergbautechnik",
+  "service_Content_3_title":"Fortgeschrittener Bergbau",
+  "service_Content_3_description":"Wir sind auf die Entwicklung sicherer und automatisierter Bergbausysteme unter Einsatz modernster Technologien spezialisiert. Wir setzen Ihre Anforderungen in ein leistungsstarkes System um, das den Abbau von Rohstoffen beschleunigt.",
+
+  "service_Content2_3_items_1_title":"Schnell reagierendes Steuerungssystem",
+  "service_Content2_3_items_1_description":"Ihre Bergwerke werden mit einem Sicherheitssteuerungssystem nach Industriestandard ausgestattet sein.",
+  "service_Content2_3_items_2_title":"Automatisierte Aufgabenausführung",
+  "service_Content2_3_items_2_description":"Ein automatisches System für das Schneiden, den Transport, die Sicherheitsprüfung und die Alarmierung sorgt für einen schnelleren und sichereren Abbauprozess",
+  "service_Content2_3_Fragment_title":"Modernes Bergbau-Ökosystem",
+  "service_Content2_3_Fragment_description":"Wir sind auf die Entwicklung und Inbetriebnahme schneller, sicherer und skalierbarer Bergbausysteme und Automatisierungslösungen spezialisiert, wobei wir die neuesten und fortschrittlichsten Technologien nach Industriestandard einsetzen.",
+
+  "service_Content2_4_items_1_title":"Zuverlässige Aufrüstung",
+  "service_Content2_4_items_1_description":"Ihr industrielles Ökosystem wird modernisiert, ohne dass Ihre Arbeitsabläufe beeinträchtigt werden.",
+  "service_Content2_4_items_2_title":"Erweiterte Funktionen",
+  "service_Content2_4_items_2_description":"Die Leistung Ihrer Bergbautechnik wird durch minimale Änderungen an Ihren derzeitigen Anlagen verbessert.",
+  "service_Content2_4_Fragment_title":"Modernisierung des Bergbausystems",
+  "service_Content2_4_Fragment_description":"Wir sind auf die Entwicklung und Inbetriebnahme skalierbarer Mining-Software und -Hardware spezialisiert, um die Automatisierungssysteme Ihres bestehenden technologischen Ökosystems zu modernisieren.",
 
   
 
