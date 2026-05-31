@@ -32,7 +32,7 @@ const metadata = {
 
   <Hero
     title={`${t("home_hero_title")} <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("home_hero_title_span")}</span>`}
-    tagline="Innovation + Automation"
+    tagline={`${t("home_hero_tagline")}`}
     description={`${t("site_description")}`}
     actions={[
       // {
@@ -135,9 +135,9 @@ const metadata = {
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Our Mindset
+        {t("home_content2_fragment_description")}
       </h3>
-      We provide a solution to industrial problems with futuristic innovations.
+      {t("home_content2_actions_text")}
     </Fragment>
   </Content2>
   <Content3

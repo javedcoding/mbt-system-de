@@ -9,6 +9,9 @@
   
   "home_hero_title": "MBT-Systems für",
   "home_hero_title_span": "Robotik und Automatisierung",
+  "home_hero_tagline": "Innovation + Automatisierung",
+  "home_hero_action_text": "Unsere Dienstleistungen",
+
   "home_feature_tagline":"Aktuell",
   "home_feature_title":"Projekte",
   "home_feature_subtitle":"Wir entwickeln Softwarelösungen in Deutschland",
@@ -39,6 +42,7 @@
   "home_content3_fragment_description_second_half":"erhalten haben, ihre Forschungs- und Entwicklungstätigkeit. Es ist eine wertvolle Bestätigung unserer Innovationskraft und unseres Engagements, immer neue Lösungen zu entwickeln.",
   "home_content3_fragment_description_atag":"Bescheinigungsstelle Forschungszulage (BSFZ).",
   
+
 
 
   "aboutus_metadata_title":"Über uns",
@@ -123,10 +127,86 @@
   "service_Content2_4_items_2_description":"Die Leistung Ihrer Bergbautechnik wird durch minimale Änderungen an Ihren derzeitigen Anlagen verbessert.",
   "service_Content2_4_Fragment_title":"Modernisierung des Bergbausystems",
   "service_Content2_4_Fragment_description":"Wir sind auf die Entwicklung und Inbetriebnahme skalierbarer Mining-Software und -Hardware spezialisiert, um die Automatisierungssysteme Ihres bestehenden technologischen Ökosystems zu modernisieren.",
+  
+  
+  
+  
+  "robotics_videoHero_title":"Zukunft der mobilen Robotik",
+  "robotics_videoHero_subtitle":"Roboter können für alle eine große Hilfe sein",
+  
+  "robotics_hero_title":"Die Zukunft liegt in unserem Labor",
+  "robotics_hero_tagline":"IoT + Zukunft",
+  "robotics_hero_description":"Wir arbeiten heute für die Zukunft",
 
+  "robotics_imagescard_title":"Effizienz und Vielseitigkeit in Bewegung",
+  "robotics_imagescard_description":"Entdecken Sie die Zukunft des Transports und Navigation mit unseren Softwarelösungen für quadrupede Roboter. Entwickelt für maximale Vielseitigkeit, revolutionieren wir die Art und Weise, wie Güter und Werkzeuge durch Gelände bewegt werden.",
 
-
-
+  "robotics_hoveringcircle_title":"Werfen Sie einen Blick auf unsere aktuellen Spitzenleistungen",
+  "robotics_hoveringCircle_item_1_title":"Überlegene Geländegängigkeit",
+  "robotics_hoveringCircle_item_1_description":"Dank seiner vierbeinigen Konstruktion meistert der Roboter mühelos unwegsames Gelände, Treppen und andere Hindernisse, die für traditionelle Transportmittel nur mit Einschränkungen oder unüberwindbar sind.",
+  "robotics_hoveringCircle_item_2_title":"Autonome Navigation",
+  "robotics_hoveringCircle_item_2_description":"Ausgestattet mit fortschrittlichen Sensoren und KI-Technologie navigiert der Roboter selbstständig durch komplexe Umgebungen, vermeidet Hindernisse und optimiert seine Route für maximale Effizienz.",
+  "robotics_hoveringCircle_item_3_title":"Eigens entwickelte Software",
+  "robotics_hoveringCircle_item_3_description":"Unser Roboter ist mit einer von uns speziell entwickelten Software ausgestattet, die höchste Präzision und Zuverlässigkeit in der Navigation und durch KI gestützte Software eine herausragende Aufgabenbewältigung gewährleistet.",
+  "robotics_hoveringCircle_item_4_title":"Verständnis von Sprachbefehlen",
+  "robotics_hoveringCircle_item_4_description":"Unsere Roboter können auf benutzerdefinierte Namen reagieren und Aufgaben unter Berücksichtigung der vom Benutzer gegebenen Sprachbefehle ausführen.",
+  
+  "robotics_videoText_eyebrow":"Entwickelt in Deutschland",
+  "robotics_videoText_title":"Die Zukunft gestalten",
+  "robotics_videoText_description":"Wir konstruieren und entwickeln täglich vierbeinige und humanoide Roboter. Von der Datensicherheit bis hin zu ausfallsicheren Navigationssystemen wird alles in Karlsfeld entwickelt.",
+  "robotics_videoText_action_text":"Kontakt",
+  "robotics_videoText_action_ariaLabel":"Interessiert!",
+  
+  "robotics_content2_items_1_title":"Jeden Tag etwas Neues lernen",
+  "robotics_content2_items_1_description":"Wir erlernen und implementieren neue, hochmoderne Algorithmen, um das Verhalten unserer Roboter zu optimieren und präziser zu gestalten",
+  "robotics_content2_items_2_title":"Gründlich testen",
+  "robotics_content2_items_2_description":"Wir testen das Verhalten unseres Roboters in der Simulation (sei es mit ROS2 Gazebo-Rviz oder Isaac) und in der realen Welt",
+  "robotics_content2_items_3_title": "Sicherheit",
+  "robotics_content2_items_3_description":"Wir statten unsere Roboter mit neuen Sicherheitsfunktionen aus, um die autonome Ausführung der Aufgaben unfallfrei zu gestalten",
+  "robotics_content2_actions_text":"Möchten Sie uns kennenlernen?",
+  "robotics_content2_actions_arialLabel":"Kontakt",
+  "robotics_content2_fragment_h3tag":"Das Motto der Entwickler",
+  "robotics_content2_fragment_description":"Unser Entwicklungsteam ist hochmotiviert, die Robotertechnologie weiterzuentwickeln, um den Bedürfnissen unserer Kunden gerecht zu werden",
+  
+  "robotics_gifscard_title":"Reinforcement Learnen",
+  "robotics_gifscard_description":"Unsere Roboter sind für komplexes Gelände ausgelegt",
+  
+  "robotics_hero2_title":"Roboter. Smart. Flexibel.",
+  "robotics_hero2_description":"Erleben Sie die Zukunft mit unserer eigens geschriebenen Software für den quadrupeden Roboter und setzen Sie neue Maßstäbe der Vielseitigkeit. Unsere Softwarelösungen bieten Ihnen neue Perspektiven – lassen Sie uns gemeinsam herausfinden, wie!",
+  
+  
+  
+  
+  "form_name_label": "Name",
+  "form_name_placeholder": "Ihr Name",
+  "form_email_label": "E-Mail",
+  "form_email_placeholder": "ihre.email@beispiel.de",
+  "form_message_label": "Nachricht",
+  "form_message_placeholder": "Wie können wir Ihnen helfen?",
+  "form_submit": "Nachricht Senden",
+  "form_subject": "Neue Nachricht von der MBT Website Contact-Seit",
+  
+  "contact_page_title":"Kontakt",
+  "contact_page_description": "Nehmen Sie Kontakt mit uns auf, um Ihr nächstes Projekt zu besprechen.",
+  "contact_page_features_tagline": "Kontaktmöglichkeiten",
+  "contact_page_features_title": "Wir sind für Sie da",
+  "contact_page_features_subtitle": "Wählen Sie den Kommunikationskanal, der Ihnen am besten gefällt. Wir antworten innerhalb von 24 Stunden.",
+  "contact_page_features1_title": "Telefon",
+  "contact_page_features1_description": "+4923 456 7890",
+  "contact_page_features2_title": "E-Mail",
+  "contact_page_features2_description": "info@mbt-systems.de",
+  "contact_page_features3_title": "Standort",
+  "contact_page_features3_description": "Dieselstraße 11, 85757 Karlsfeld, Germay ",
+  "contact_page_features4_title": "Individuelle Betreuung",
+  "contact_page_features4_description": "Wir verstehen Ihre Bedürfnisse und bieten Ihnen maßgeschneiderte Lösungen an.",
+  "contact_page_features5_title": "Technischer Support",
+  "contact_page_features5_description": "Wir klären alle Fragen und beheben technische Probleme umgehend.",
+  "contact_page_features6_title": "Strategische Beratung",
+  "contact_page_features6_description": "Wir empfehlen Ihnen, den Erfolg Ihres Projekts sicherzustellen.",
+  
+  
+  
+  
   "career_feature_tagline":"Hallo",
   "career_feature_title":"Schau dir die Kriterien an!",
   "career_feature_subtitle":"Wir suchen nach kreativen Köpfen und motivierten Talenten, die mit uns die Zukunft gestalten wollen. Bist du bereit, Teil unseres Teams zu werden? ",
@@ -140,8 +220,7 @@
   "career_hovering_3_description":"Wir bieten außerdem ein inspirierendes Umfeld, das Kreativität und Produktivität fördert. Unser Büro ist modern ausgestattet und bietet alles, was du brauchst, um dich wohlzufühlen und effektiv zu arbeiten.",
   "career_hovering_4_title":"Vielfalt",
   "career_hovering_4_description":"Wir schätzen und fördern Vielfalt in all ihren Facetten. Unterschiedliche Perspektiven und Erfahrungen bereichern unsere Arbeit und tragen maßgeblich zu unserem Erfolg bei. Bei uns ist jeder willkommen, unabhängig von Herkunft, Geschlecht, Alter oder Lebensstil. Wir glauben fest daran, dass ein vielfältiges Team kreativer und innovativer ist und uns hilft, die besten Lösungen zu finden.",
-
-  "career_feature1_title":"Kreativität",
+    "career_feature1_title":"Kreativität",
   "career_feature2_title":"Technikversiert",
   "career_feature3_title":"Zukunftsorientiert ",
     
@@ -167,39 +246,55 @@
   "career_content2_3_title": "Berufserfahrene",
   "career_content2_3_description": "Du hast bereits wertvolle Erfahrungen gesammelt und bist bereit für den nächsten Karriereschritt? Dazu bieten wir dir die Möglichkeit, deine Expertise in spannenden Projekten einzusetzen und weiter auszubauen. Hier kannst du deine Fähigkeiten sowie innovative Lösungen entwickeln und in einem Team arbeiten, das deine Erfahrung schätzt. Wir glauben an kontinuierliches Wachstum und bieten dir die Plattform, um deine Karriere auf das nächste Level zu heben. ",
   
+
+
+
+  "mining_videoHero_title":"Future of Mobile Robotics",
+  "mining_videoHero_subtitle":"Robot can be helping hand for all",
+
+  "mining_hero_title":"Future is in our lab",
+  "mining_hero_tagline":"IoT + Future",
+  "mining_hero_description":"We work today for future",
   
+  "mining_imagescard_title":"Efficiency & Versatility in Motion",
+  "mining_imagescard_description":"Discover the future of transport and navigation with our software solutions for quadruped robots. Designed for maximum versatility, we are revolutionising the way goods and tools are moved through terrain.",  
+  
+  "mining_hoveringcircle_title":"Take a look at our current excellence",
+  "mining_hoveringCircle_item_1_title":"Superior Off-Road Capability",
+  "mining_hoveringCircle_item_1_description":"Thanks to its four-legged design, the robot effortlessly masters rough terrain, stairs and other obstacles that are limited or insurmountable for traditional means of transport.",
+  "mining_hoveringCircle_item_2_title":"Autonomous Navigation",
+  "mining_hoveringCircle_item_2_description":"Equipped with advanced sensors and AI technology, the robot navigates independently through complex environments, avoids obstacles and optimises its route for maximum efficiency.",
+  "mining_hoveringCircle_item_3_title":"Specially Developed Software",
+  "mining_hoveringCircle_item_3_description":"Our robot is equipped with specially developed software that ensures the highest precision and reliability in navigation and outstanding task fulfilment thanks to AI-supported software.",
+  "mining_hoveringCircle_item_4_title":"Voice Command Understanding",
+  "mining_hoveringCircle_item_4_description":"Our robots can respond to custom names for it and also perform tasks considering the voice commands given by the user.",  
+  
+  "mining_videoText_eyebrow":"Engineered in Germany",
+  "mining_videoText_title":"Developping The Future",
+  "mining_videoText_description":"We are engineering and developping qudruped and humanoid robots everyday. From data security to navigation failsafe everything is being developed in Karlsfeld",
+  "mining_videoText_action_text":"Contact Us",
+  "mining_videoText_action_ariaLabel":"Interested!",
+  
+  "mining_content2_items_1_title":"Learning Everyday",
+  "mining_content2_items_1_description":"We learn and implement new state of the art algorithms to fine tune our robots behavior to be more precise",
+  "mining_content2_items_2_title":"Test Rigorously",
+  "mining_content2_items_2_description":"We test our robot's behavior in simulation (whether it's ROS2 Gazebo-Rviz or Issac) and physical world",
+  "mining_content2_items_3_title": "Safety",
+  "mining_content2_items_3_description":"We implement new safety features to our robots to make the autonomous task free of accidents",
+  "mining_content2_actions_text":"Want to know us?",
+  "mining_content2_actions_arialLabel":"Contact Us",
+  "mining_content2_fragment_h3tag":"Developpers' Moto",
+  "mining_content2_fragment_description":"Our developping team is highly motivated to advance robotic technology to meet customers need",
+  
+  "mining_gifscard_title":"Reinforcement Learning",
+  "mining_gifscard_description":"Our robots are trained for complex terrains",
+  
+  "mining_hero2_title":"Robots. Smart. Flexible.",
+  "mining_hero2_description":"Experience the future with our specially written software for the quadruped robot and set new standards of versatility. Our software solutions offer you new perspectives - let's find out how together!",
 
   
-  "form_name_label": "Name",
-  "form_name_placeholder": "Ihr Name",
-  "form_email_label": "E-Mail",
-  "form_email_placeholder": "ihre.email@beispiel.de",
-  "form_message_label": "Nachricht",
-  "form_message_placeholder": "Wie können wir Ihnen helfen?",
-  "form_submit": "Nachricht Senden",
-  "form_subject": "Neue Nachricht von der MBT Website Contact-Seit",
-
-  "contact_page_title":"Kontakt",
-  "contact_page_description": "Nehmen Sie Kontakt mit uns auf, um Ihr nächstes Projekt zu besprechen.",
-  "contact_page_features_tagline": "Kontaktmöglichkeiten",
-  "contact_page_features_title": "Wir sind für Sie da",
-  "contact_page_features_subtitle": "Wählen Sie den Kommunikationskanal, der Ihnen am besten gefällt. Wir antworten innerhalb von 24 Stunden.",
-  "contact_page_features1_title": "Telefon",
-  "contact_page_features1_description": "+4923 456 7890",
-  "contact_page_features2_title": "E-Mail",
-  "contact_page_features2_description": "info@mbt-systems.de",
-  "contact_page_features3_title": "Standort",
-  "contact_page_features3_description": "Dieselstraße 11, 85757 Karlsfeld, Germay ",
-  "contact_page_features4_title": "Individuelle Betreuung",
-  "contact_page_features4_description": "Wir verstehen Ihre Bedürfnisse und bieten Ihnen maßgeschneiderte Lösungen an.",
-  "contact_page_features5_title": "Technischer Support",
-  "contact_page_features5_description": "Wir klären alle Fragen und beheben technische Probleme umgehend.",
-  "contact_page_features6_title": "Strategische Beratung",
-  "contact_page_features6_description": "Wir empfehlen Ihnen, den Erfolg Ihres Projekts sicherzustellen.",
-
-
-
-
+  
+  
   "home": "Startseite",
   "about": "Über uns",
   "services": "Dienstleistungen",

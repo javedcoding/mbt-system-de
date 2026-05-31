@@ -1,0 +1,82 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+
+interface ImageCardItem {
+  src: string;
+  alt?: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  items?: ImageCardItem[];
+  id?: string;
+  isDark?: boolean;
+  classes?: {
+    container?: string;
+    [key: string]: string | undefined;
+  };
+  bg?: string;
+}
+
+const {
+  title = "",
+  description = "",
+  items = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+} = Astro.props as Props;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${containerClassProp}`}
+  bg={bg}
+  classes={otherClasses}
+>
+  <section class="rounded-[2rem] bg-gradient-to-br from-yellow-300 via-orange-400 to-red-500 px-4 py-12 shadow-lg sm:px-6 md:px-10 lg:px-12">
+    {
+      title && (
+        <div class="mx-auto mb-10 max-w-4xl text-center">
+          <h2 class="font-heading bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-400 bg-[length:200%_200%] bg-clip-text pb-3 text-3xl font-extrabold leading-[1.15] tracking-tight text-transparent sm:text-4xl md:text-6xl">
+            {title}
+          </h2>
+        </div>
+      )
+    }
+
+    <div class={`grid grid-cols-1 gap-8 ${
+      items.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3"
+    }`}>
+      {
+        items.map((item) => (
+          <article class="overflow-hidden rounded-3xl border border-white/30 bg-white/20 shadow-sm backdrop-blur-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+            <div class="aspect-video w-full overflow-hidden bg-black/10">
+              <img
+                src={item.src}
+                alt={item.alt || ""}
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    {
+      description && (
+        <div class="mx-auto mt-10 max-w-4xl text-left">
+          <p class="text-base leading-8 dark:text-white md:text-lg">
+            {description}
+          </p>
+        </div>
+      )
+    }
+  </section>
+</WidgetWrapper>

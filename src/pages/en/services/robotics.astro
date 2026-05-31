@@ -1,39 +1,44 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ServiceList from "@/components/widgets/ServiceList.astro";
-import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
 import GifsCard from "@/components/widgets/GifsCard.astro";
-import { siteConfig } from "@/config/site";
+import ImagesCard from "@/components/widgets/ImagesCard.astro";
+import HoveringCircle from "@/components/widgets/HoveringCircle.astro";
 import VideoHero from "@/components/widgets/VideoHero.astro";
 import Hero from "@/components/widgets/Hero.astro";
-import Features from "@/components/widgets/Features.astro";
+import robotic1Img from "@/assets/images/services/robotic_jungle.png";
+import robotic2Img from "@/assets/images/services/humanoid_handshake.png";
+import robotic3Img from "@/assets/images/services/quadruped_armed.png";
 import devImg from "@/assets/images/dev_balanced.png";
 import stairVid from "@/assets/videos/stairTest.mp4";
 import sandGif from "@/assets/videos/SandDeep.mp4";
 import snowGif from "@/assets/videos/SchneeDeep.mp4";
 import stairGif from "@/assets/videos/TreppenDeep.mp4";
-import Content3 from "@/components/widgets/Content3.astro";
 import VideoText from "@/components/widgets/VideoText.astro";
 import { useTranslations } from "@/utils/i18n";
 const lang = "en"; // or "de"
 const t = useTranslations(lang);
 
-const services = [
+const current_progress = [
   {
-    title: "Web Development",
-    description: "Static and dynamic sites built for the modern era.",
-    icon: "lucide:globe",
+    title: `${t("robotics_hoveringCircle_item_1_title")}`,
+    description: `${t("robotics_hoveringCircle_item_1_description")}`,
+    icon: "lucide:mountain-snow",
   },
   {
-    title: "SEO Optimization",
-    description: "We ensure your content is found by those looking for it.",
-    icon: "lucide:search",
+    title: `${t("robotics_hoveringCircle_item_2_title")}`,
+    description: `${t("robotics_hoveringCircle_item_2_description")}`,
+    icon: "lucide:map-pin-house",
   },
   {
-    title: "IT Consulting",
-    description: "Technical advice to scale your projects to the next level.",
-    icon: "lucide:rocket",
+    title: `${t("robotics_hoveringCircle_item_3_title")}`,
+    description: `${t("robotics_hoveringCircle_item_3_description")}`,
+    icon: "lucide:folder-code",
+  },
+  {
+    title: `${t("robotics_hoveringCircle_item_4_title")}`,
+    description: `${t("robotics_hoveringCircle_item_4_description")}`,
+    icon: "lucide:speech",
   },
 ];
 const metadata = {
@@ -45,100 +50,78 @@ const metadata = {
 
 <BaseLayout {metadata}>
   <VideoHero
-    title={`${siteConfig.name}`}
-    subtitle={`${t("site_description")}`}
+    title={`${t("robotics_videoHero_title")}`}
+    subtitle={`${t("robotics_videoHero_subtitle")}`}
     poster="/videos/mbtHeroPoster.webp"
     videoSrc=/videos/mbtHeroVideo.mp4
   />
 
   <Hero
-    title={`${t("home_hero_title")} <br class="hidden md:block" /> <span class="bg-linear-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("home_hero_title_span")}</span>`}
-    tagline="Innovation + Automation"
-    description={`${t("site_description")}`}
-    actions={[
-      // {
-      //   text: "Get Started",
-      //   href: "https://github.com/devgelo-labs/astro-starter-pro",
-      //   variant: "primary",
-      //   icon: "lucide:github",
-      // },
+    title={`${t("robotics_hero_title")}`}
+    tagline={`${t("robotics_hero_tagline")}`}
+    description={`${t("robotics_hero_description")}`}
+  />
+
+  <ImagesCard
+    title={t("robotics_imagescard_title")}
+    description={t("robotics_imagescard_description")}
+    items={[
       {
-        text: "Our Services",
-        href: `/${lang}/services`,
-        variant: "secondary",
-        icon: "lucide:arrow-right",
-        ariaLabel: "Learn more about our services",
+        src: robotic1Img.src,
+        alt: "Robotics demo 1",
+      },
+      {
+        src: robotic2Img.src,
+        alt: "Robotics demo 2",
+      },
+      {
+        src: robotic3Img.src,
+        alt: "Robotics demo 3",
       },
     ]}
   />
-  <Features
-    tagline=`${t("home_feature_tagline")}`
-    title=`${t("home_feature_title")}`
-    subtitle=`${t("home_feature_subtitle")}`
-    features={[
-      {
-        title: `${t("home_feature1_title")}`,
-        description: `${t("home_feature1_description")}`,
-        icon: "lucide:siren",
-        iconClass: "bg-blue-500/10 text-blue-400",
-      },
-      {
-        title: `${t("home_feature2_title")}`,
-        description: `${t("home_feature2_description")}`,
-        icon: "lucide:pickaxe",
-        iconClass: "bg-purple-500/10 text-purple-400",
-      },
-      {
-        title: `${t("home_feature3_title")}`,
-        description: `${t("home_feature3_description")}`,
-        icon: "lucide:brain-cog",
-        iconClass: "bg-pink-500/10 text-black-400",
-      },
-    ]}
+
+  <HoveringCircle 
+    title={t("robotics_hoveringcircle_title")}
+    items={current_progress} 
   />
-  <!-- <VideoText
-    eyebrow={t("home_videoText_eyebrow")}
-    title={t("home_videoText_title")}
-    description={t("home_videoText_description")}
-    videoSrc={stairVid}
-    poster="/videos/robot-demo-poster.webp"
-    actions={[
-      {
-        text: t("services"),
-        href: `/${lang}/services`,
-        variant: "secondary",
-        icon: "lucide:arrow-right",
-        ariaLabel: t("services"),
-      },
-    ]}
-    animate
-  /> -->
+
   <VideoText
-    eyebrow={t("home_videoText_eyebrow")}
-    title={t("home_videoText_title")}
-    description={t("home_videoText_description")}
+    eyebrow={t("robotics_videoText_eyebrow")}
+    title={t("robotics_videoText_title")}
+    description={t("robotics_videoText_description")}
     videoSrc={stairVid}
     poster="/videos/robot-demo-poster.webp"
+    actions={[
+      {
+        text: t("robotics_videoText_action_ariaLabel"),
+        href: `/${lang}/contact`,
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+        ariaLabel: t("robotics_videoText_action_ariaLabel"),
+      },
+    ]}
     animate
   />
+
   <Content2
     items={[
       {
-        title: `${t("home_content2_item1_title")}`,
-        description: `${t("home_content2_item1_description")}`,
-        icon: "lucide:puzzle",
+        title: `${t("robotics_content2_items_1_title")}`,
+        description: `${t("robotics_content2_items_1_description")}`,
+        icon: "lucide:book-alert",
         iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: `${t("home_content2_item2_title")}`,
-        description: `${t("home_content2_item2_description")}`,
-        icon: "lucide:rocket",
+        title: `${t("robotics_content2_items_2_title")}`,
+        description: `${t("robotics_content2_items_2_description")}`,
+        icon: "lucide:bug-off",
         iconClass: "bg-purple-500/10 text-purple-400",
       },
       {
-        title: `${t("home_content2_item3_title")}`,
-        description: `${t("home_content2_item3_description")}`,
-        icon: "lucide:binoculars",
+        title: `${t("robotics_content2_items_3_title")}`,
+        description: `${t("robotics_content2_items_3_description")}`,
+        icon: "lucide:shield-check",
         iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
@@ -146,65 +129,44 @@ const metadata = {
     imageAlt="Development"
     actions={[
       {
-        text: `${t("home_content2_actions_text")}`,
+        text: `${t("robotics_content2_actions_text")}`,
         href: `/${lang}/contact`,
         variant: "primary",
         icon: "lucide:mail",
-        ariaLabel: `${t("home_content2_actions_text")}`,
+        ariaLabel: `${t("robotics_content2_actions_arialLabel")}`,
       },
     ]}
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Our Mindset
+        {t("robotics_content2_fragment_h3tag")}
       </h3>
-      We provide a solution to industrial problems with futuristic innovations.
+      {t("robotics_content2_fragment_description")}
     </Fragment>
   </Content2>
 
-  <!-- <Content4
-  title={t("robotics_content4_title")}
-  description={t("robotics_content4_description")}
-  speed={28}
-  cards={[
-    {
-      title: t("robotics_content4_card1_title"),
-      description: t("robotics_content4_card1_description"),
-      src: (sandGif),
-      alt: "Robotics simulation demo",
-    },
-    {
-      title: t("robotics_content4_card2_title"),
-      description: t("robotics_content4_card2_description"),
-      src: (snowGif),
-      alt: "Robotic movement demo",
-    },
-    {
-      title: t("robotics_content4_card3_title"),
-      description: t("robotics_content4_card3_description"),
-      src: (stairGif),
-      alt: "Automation workflow demo",
-    },
-  ]}
-/> -->
+  <GifsCard
+    title={t("robotics_gifscard_title")}
+    description={t("robotics_gifscard_description")}
+    items={[
+      {
+        src: (sandGif),
+        alt: "Robotics demo 1",
+      },
+      {
+        src: (snowGif),
+        alt: "Robotics demo 2",
+      },
+      {
+        src: (stairGif),
+        alt: "Robotics demo 3",
+      },
+    ]}
+  />
 
-<GifsCard
-  title={t("robotics_gifscard_title")}
-  description={t("robotics_gifscard_description")}
-  items={[
-    {
-      src: (sandGif),
-      alt: "Robotics demo 1",
-    },
-    {
-      src: (snowGif),
-      alt: "Robotics demo 2",
-    },
-    {
-      src: (stairGif),
-      alt: "Robotics demo 3",
-    },
-  ]}
-/>
+  <Hero
+    title={`<span class="bg-linear-to-r from-green-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("robotics_hero2_title")}</span> `}
+    description={`${t("robotics_hero2_description")}`}
+  />
 </BaseLayout>
 

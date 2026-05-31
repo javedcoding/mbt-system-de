@@ -1,27 +1,40 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import ServiceList from "@/components/widgets/ServiceList.astro";
-import Content from "@/components/widgets/Content.astro";
 import Content2 from "@/components/widgets/Content2.astro";
-import webDevImg from "@/assets/images/services/web-dev.webp";
-import seoImg from "@/assets/images/services/seo.webp";
-import consultingImg from "@/assets/images/services/consulting.webp";
+import GifsCard from "@/components/widgets/GifsCard.astro";
+import ImagesCard from "@/components/widgets/ImagesCard.astro";
+import HoveringCircle from "@/components/widgets/HoveringCircle.astro";
+import VideoHero from "@/components/widgets/VideoHero.astro";
+import Hero from "@/components/widgets/Hero.astro";
+import mining1Img from "@/assets/images/services/mining1.png";
+import mining2Img from "@/assets/images/services/mining2.png";
+import mining3Img from "@/assets/images/services/mining3.png";
+import devImg from "@/assets/images/dev_balanced.png";
+import stairVid from "@/assets/videos/stairTest.mp4";
+import miningVid from "@/assets/videos/videoMining.mp4";
+import sandGif from "@/assets/videos/SandDeep.mp4";
+import snowGif from "@/assets/videos/SchneeDeep.mp4";
+import stairGif from "@/assets/videos/TreppenDeep.mp4";
+import VideoText from "@/components/widgets/VideoText.astro";
+import { useTranslations } from "@/utils/i18n";
+const lang = "en"; // or "de"
+const t = useTranslations(lang);
 
-const services = [
+const current_features = [
   {
-    title: "Web Development",
-    description: "Static and dynamic sites built for the modern era.",
-    icon: "lucide:globe",
+    title: `${t("mining_hoveringCircle_item_1_title")}`,
+    description: `${t("mining_hoveringCircle_item_1_description")}`,
+    icon: "lucide:cog",
   },
   {
-    title: "SEO Optimization",
-    description: "We ensure your content is found by those looking for it.",
-    icon: "lucide:search",
+    title: `${t("mining_hoveringCircle_item_2_title")}`,
+    description: `${t("mining_hoveringCircle_item_2_description")}`,
+    icon: "lucide:clipboard-clock",
   },
   {
-    title: "IT Consulting",
-    description: "Technical advice to scale your projects to the next level.",
-    icon: "lucide:rocket",
+    title: `${t("mining_hoveringCircle_item_3_title")}`,
+    description: `${t("mining_hoveringCircle_item_3_description")}`,
+    icon: "lucide:brick-wall-shield",
   },
 ];
 const metadata = {
@@ -32,97 +45,124 @@ const metadata = {
 ---
 
 <BaseLayout {metadata}>
-  <Content
-    tagline="Services"
-    title="Our Services"
-    description={[
-      "Comprehensive solutions designed to maximize the potential of your digital presence.",
-    ]}
+  <VideoHero
+    title={`${t("mining_videoHero_title")}`}
+    subtitle={`${t("mining_videoHero_subtitle")}`}
+    poster="/videos/mbtHeroPoster.webp"
+    videoSrc={miningVid}
   />
-  <ServiceList services={services} classes={{ container: "pt-0 md:pt-0" }} />
-  <Content
-    tagline="Web Development"
-    title="Modern Web Development"
-    description={[
-      "We specialize in building fast, secure, and scalable websites using the latest technologies. We transform your vision into an impactful digital experience.",
-    ]}
-    classes={{ container: "pb-0 md:pb-0" }}
-  />
-  <Content2
-    items={[
-      {
-        title: "Responsive Design",
-        description:
-          "Your site will look perfect on any device, from mobiles to desktop screens.",
-      },
-      {
-        title: "Optimized Performance",
-        description:
-          "Fast loading to improve user experience and SEO positioning.",
-      },
-    ]}
-    image={webDevImg}
-    imageAlt="Modern Web Development"
-    classes={{ container: "pt-0 md:pt-0" }}
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Modern Web Development
-      </h3>
-      We specialize in building fast, secure, and scalable websites using the latest
-      technologies. We transform your vision into an impactful digital experience.
-    </Fragment>
-  </Content2>
 
-  <Content2
-    isReversed={true}
+  <Hero
+    title={`${t("mining_hero_title")}`}
+    tagline={`${t("mining_hero_tagline")}`}
+    description={`${t("mining_hero_description")}`}
+  />
+
+  <ImagesCard
+    title={t("mining_imagescard_title")}
+    description={t("mining_imagescard_description")}
     items={[
       {
-        title: "SEO Audit",
-        description:
-          "We deeply analyze your website to identify technical and content improvement opportunities.",
+        src: mining1Img.src,
+        alt: "mining demo 1",
       },
       {
-        title: "Content Strategy",
-        description:
-          "We create relevant content plans that attract and retain your target audience.",
+        src: mining2Img.src,
+        alt: "mining demo 2",
+      },
+      {
+        src: mining3Img.src,
+        alt: "mining demo 3",
       },
     ]}
-    image={seoImg}
-    imageAlt="SEO Strategies"
-  >
-    <Fragment>
-      <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        SEO Optimization
-      </h3>
-      We help your business get found by the right people. Our organic positioning
-      strategies are designed to improve your organic visibility.
-    </Fragment>
-  </Content2>
+  />
+
+  <HoveringCircle 
+    title={t("mining_hoveringcircle_title")}
+    items={current_features} 
+  />
+
+  <VideoText
+    eyebrow={t("mining_videoText_eyebrow")}
+    title={t("mining_videoText_title")}
+    description={t("mining_videoText_description")}
+    videoSrc={stairVid}
+    poster="/videos/robot-demo-poster.webp"
+    actions={[
+      {
+        text: t("mining_videoText_action_ariaLabel"),
+        href: `/${lang}/contact`,
+        variant: "secondary",
+        icon: "lucide:arrow-right",
+        ariaLabel: t("mining_videoText_action_ariaLabel"),
+      },
+    ]}
+    animate
+  />
 
   <Content2
     items={[
       {
-        title: "Digital Transformation",
-        description:
-          "We guide you in adopting new technologies to optimize your business processes.",
+        title: `${t("mining_content2_items_1_title")}`,
+        description: `${t("mining_content2_items_1_description")}`,
+        icon: "lucide:book-alert",
+        iconClass: "bg-blue-500/10 text-blue-400",
       },
       {
-        title: "Software Architecture",
-        description:
-          "We design robust and scalable systems prepared for future growth.",
+        title: `${t("mining_content2_items_2_title")}`,
+        description: `${t("mining_content2_items_2_description")}`,
+        icon: "lucide:bug-off",
+        iconClass: "bg-purple-500/10 text-purple-400",
+      },
+      {
+        title: `${t("mining_content2_items_3_title")}`,
+        description: `${t("mining_content2_items_3_description")}`,
+        icon: "lucide:shield-check",
+        iconClass: "bg-pink-500/10 text-pink-400",
       },
     ]}
-    image={consultingImg}
-    imageAlt="Technology Consulting"
+    image={devImg}
+    imageAlt="Development"
+    actions={[
+      {
+        text: `${t("mining_content2_actions_text")}`,
+        href: `/${lang}/contact`,
+        variant: "primary",
+        icon: "lucide:mail",
+        ariaLabel: `${t("mining_content2_actions_arialLabel")}`,
+      },
+    ]}
   >
     <Fragment>
       <h3 class="text-2xl font-bold tracking-tight sm:text-3xl mb-2">
-        Technology Consulting
+        {t("mining_content2_fragment_h3tag")}
       </h3>
-      We accompany you in critical decision-making. We evaluate your current infrastructure
-      and design personalized roadmaps to take your company to the next technological
-      level.
+      {t("mining_content2_fragment_description")}
     </Fragment>
   </Content2>
+
+  <GifsCard
+    title={t("mining_gifscard_title")}
+    description={t("mining_gifscard_description")}
+    items={[
+      {
+        src: (sandGif),
+        alt: "mining demo 1",
+      },
+      {
+        src: (snowGif),
+        alt: "mining demo 2",
+      },
+      {
+        src: (stairGif),
+        alt: "mining demo 3",
+      },
+    ]}
+  />
+
+  <Hero
+    title={`<span class="bg-linear-to-r from-green-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">${t("mining_hero2_title")}</span> `}
+    description={`${t("mining_hero2_description")}`}
+  />
 </BaseLayout>
+
