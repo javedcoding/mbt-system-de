@@ -1,0 +1,173 @@
+---
+import WidgetWrapper from "./WidgetWrapper.astro";
+
+interface Content4Card {
+  title?: string;
+  description?: string;
+  src: string;
+  alt?: string;
+}
+
+interface Props {
+  title?: string;
+  description?: string;
+  cards?: Content4Card[];
+  id?: string;
+  isDark?: boolean;
+  classes?: {
+    container?: string;
+    [key: string]: string | undefined;
+  };
+  bg?: string;
+
+  /**
+   * Animation duration in seconds.
+   * Higher number = slower movement.
+   */
+  speed?: number;
+}
+
+const {
+  title = "",
+  description = "",
+  cards = [],
+  id,
+  isDark = false,
+  classes = {},
+  bg = await Astro.slots.render("bg"),
+  speed = 30,
+} = Astro.props as Props;
+
+const { container: containerClassProp = "", ...otherClasses } = classes;
+
+// Duplicate cards so the animation loops smoothly.
+const loopCards = [...cards, ...cards];
+---
+
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-7xl mx-auto overflow-hidden ${containerClassProp}`}
+  bg={bg}
+  classes={otherClasses}
+>
+  <div class="mx-auto mb-12 max-w-4xl text-center">
+    {
+      title && (
+        <h2 class="font-heading mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent md:text-6xl">
+          {title}
+        </h2>
+      )
+    }
+
+    {
+      description && (
+        <p class="mx-auto max-w-3xl text-lg leading-8 text-muted-foreground md:text-xl">
+          {description}
+        </p>
+      )
+    }
+  </div>
+
+  <div class="content4-mask relative overflow-hidden">
+    <div
+      class="content4-track flex flex-col gap-6 md:flex-row"
+      style={`--content4-speed: ${speed}s;`}
+    >
+      {
+        loopCards.map((card) => (
+          <article class="w-full shrink-0 overflow-hidden rounded-3xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg md:w-[360px]">
+            <div class="aspect-video w-full overflow-hidden bg-muted">
+              <img
+                src={card.src}
+                alt={card.alt || card.title || ""}
+                class="h-full w-full object-cover"
+                loading="lazy"
+              />
+            </div>
+
+            {
+              (card.title || card.description) && (
+                <div class="p-5">
+                  {card.title && (
+                    <h3 class="mb-2 text-xl font-bold text-foreground">
+                      {card.title}
+                    </h3>
+                  )}
+
+                  {card.description && (
+                    <p class="text-sm leading-6 text-muted-foreground">
+                      {card.description}
+                    </p>
+                  )}
+                </div>
+              )
+            }
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</WidgetWrapper>
+
+<style>
+  /*
+    Mobile default:
+    Cards move vertically from top to bottom.
+  */
+  .content4-mask {
+    max-height: 720px;
+  }
+
+  .content4-track {
+    animation: content4-scroll-y var(--content4-speed) linear infinite;
+  }
+
+  .content4-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes content4-scroll-y {
+    from {
+      transform: translateY(-50%);
+    }
+
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  /*
+    Desktop:
+    Cards move horizontally from left to right.
+  */
+  @media (min-width: 768px) {
+    .content4-mask {
+      max-height: none;
+    }
+
+    .content4-track {
+      width: max-content;
+      animation-name: content4-scroll-x;
+    }
+
+    @keyframes content4-scroll-x {
+      from {
+        transform: translateX(-50%);
+      }
+
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .content4-track {
+      animation: none;
+      transform: none;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>
